@@ -5,6 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.jgrapht.Graph;
+import org.jgrapht.graph.DefaultEdge;
+import org.jgrapht.graph.SimpleGraph;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,9 +16,8 @@ import java.util.ArrayList;
  * JavaFX App
  */
 public class App extends Application {
-
+    public static Graph<Object, DefaultEdge> sistemas=new SimpleGraph<>(DefaultEdge.class);
     public static ArrayList<Usuario> usuarios=new ArrayList<>();
-
     private static Scene scene;
 
     @Override
