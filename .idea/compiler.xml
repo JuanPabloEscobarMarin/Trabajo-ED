@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="TrabajoFinal" />
         <module name="TrabajoMaven" />
+        <module name="Trabajo-ED" />
       </profile>
     </annotationProcessing>
   </component>
