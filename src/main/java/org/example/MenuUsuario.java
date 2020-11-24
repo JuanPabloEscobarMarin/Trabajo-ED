@@ -18,8 +18,8 @@ public class MenuUsuario {
     public TextField Password;
     @FXML
     private void Entrar(ActionEvent entrar)throws IOException {
-        Password.setText("");
-        Usuario.setText("");
+        ErrorPasword.setText("");
+        ErrorUsuario.setText("");
         for (Usuario usuario:App.usuarios) {
             if(Usuario.getText().equals(usuario.documento)||Usuario.getText().equals(usuario.correo)){
                 if(Password.getText().equals(usuario.password)){

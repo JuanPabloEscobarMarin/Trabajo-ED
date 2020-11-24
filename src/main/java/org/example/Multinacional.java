@@ -10,7 +10,7 @@ public class Multinacional {
     public ArrayList<Inversionista> inversores;
     public ArrayList<Sede> sedes;
     public int NIT;
-    public int codigo;
+
 
 
     public Multinacional(String nombre, String ceo, int ingresoTotal, int gastoTotal, int NIT) {

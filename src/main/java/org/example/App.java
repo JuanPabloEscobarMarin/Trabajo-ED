@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Hashtable;
 
 /**
  * JavaFX App
@@ -36,6 +35,7 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+
         Usuario nuevoUsuario = new Usuario("123456789","pepito", "perez", "example.com", "1234");
         usuarios.add(nuevoUsuario);
         launch();
