@@ -11,13 +11,17 @@ import org.jgrapht.graph.SimpleGraph;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
-    public static Graph<Object, DefaultEdge> sistemas=new SimpleGraph<>(DefaultEdge.class);
+    public static Graph<Object, DefaultEdge> sistema=new SimpleGraph<>(DefaultEdge.class);
     public static ArrayList<Usuario> usuarios=new ArrayList<>();
+    public static Hashtable<String,Area>areas=new Hashtable<>();
+    public static Hashtable<Integer,Empleado>empleados=new Hashtable<>();
+    public static Hashtable<Integer, Cliente>clientes=new Hashtable<>();
     private static Scene scene;
 
     @Override

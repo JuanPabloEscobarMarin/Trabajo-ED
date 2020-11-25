@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.MenuAdministracion"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MenuAdministracion">
+   <children>
+      <Label layoutX="137.0" layoutY="43.0" text="Bienvenido al sistema de administracion">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="Area" layoutX="169.0" layoutY="128.0" mnemonicParsing="false" text="Area" />
+      <CheckBox fx:id="Empleado" layoutX="271.0" layoutY="128.0" mnemonicParsing="false" text="Empleado" />
+      <CheckBox fx:id="Cliente" layoutX="377.0" layoutY="128.0" mnemonicParsing="false" text="Cliente" />
+      <Label layoutX="40.0" layoutY="128.0" text="Seleccione un clase" />
+      <Label layoutX="32.0" layoutY="183.0" text="Seleccione una opcion" />
+      <CheckBox fx:id="Crear" layoutX="169.0" layoutY="183.0" mnemonicParsing="false" text="Crear" />
+      <CheckBox fx:id="Editar" layoutX="234.0" layoutY="183.0" mnemonicParsing="false" text="Editar" />
+      <CheckBox fx:id="Ver" layoutX="309.0" layoutY="183.0" mnemonicParsing="false" text="Ver" />
+      <CheckBox fx:id="Eliminar" layoutX="383.0" layoutY="183.0" mnemonicParsing="false" text="Eliminar" />
+      <Label layoutX="77.0" layoutY="233.0" />
+      <TextField fx:id="Texto" layoutX="234.0" layoutY="229.0" visible="false" />
+      <Button layoutX="508.0" layoutY="314.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
+      <Button layoutX="508.0" layoutY="350.0" mnemonicParsing="false" onAction="#Salir" text="Volver" />
+      <Label fx:id="Informacion" layoutX="250.0" layoutY="306.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="ErrorClase" layoutX="456.0" layoutY="128.0" textFill="RED" />
+      <Label fx:id="ErrorOpcion" layoutX="484.0" layoutY="183.0" textFill="RED" />
+      <Label fx:id="ErrorText" layoutX="477.0" layoutY="225.0" textFill="#e10000" />
+      <Button fx:id="BotonVer" layoutX="435.0" layoutY="314.0" mnemonicParsing="false" onAction="#ActionVer" text="Ver" visible="false" />
+   </children>
 </AnchorPane>

@@ -102,12 +102,12 @@ public class MenuBusqueda {
 
         //Proceso de busqueda
 
-        App.setRoot("MenuUsuario");
+        App.setRoot("MenuPrincipal");
     }
 
     @FXML
     private void Salir(ActionEvent salir)throws IOException {
-        App.setRoot("MenuUsuario");
+        App.setRoot("MenuPrincipal");
     }
 
 

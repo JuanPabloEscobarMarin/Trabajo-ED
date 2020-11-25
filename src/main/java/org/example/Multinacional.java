@@ -1,14 +1,10 @@
 package org.example;
 
-import java.util.ArrayList;
-
 public class Multinacional {
     public String nombre;
     public String ceo;
     public int ingresoTotal;
     public int gastoTotal;
-    public ArrayList<Inversionista> inversores;
-    public ArrayList<Sede> sedes;
     public int NIT;
 
 
@@ -19,15 +15,13 @@ public class Multinacional {
         this.ceo = ceo;
         this.ingresoTotal = ingresoTotal;
         this.gastoTotal = gastoTotal;
-        this.inversores=new ArrayList<>();
-        this.sedes=new ArrayList<>();
 
     }
 
 
     @Override
     public String toString(){
-        return "Nombre: "+nombre+", ceo: "+ceo+", NIT: "+NIT+", numero de sedes: "+sedes.size()+", fondos: "+ingresoTotal+", gastos: "+gastoTotal;
+        return "Nombre: "+nombre+", ceo: "+ceo+", NIT: "+NIT+", fondos: "+ingresoTotal+", gastos: "+gastoTotal;
     }
 
 
