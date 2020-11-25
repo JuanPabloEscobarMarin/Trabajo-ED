@@ -6,7 +6,7 @@ public class Area {
     public int ingresoArea;
     public  int gastoArea;
 
-    public Area (String nombreDelArea, int ingresoArea, int gastoArea, Sede sede) {
+    public Area (String nombreDelArea, int ingresoArea, int gastoArea) {
         this.nombreDelArea = nombreDelArea ;
         this.ingresoArea = ingresoArea;
         this.gastoArea= gastoArea;
@@ -15,7 +15,7 @@ public class Area {
 
     @Override
     public String toString(){
-        return "Nombre del area: "+nombreDelArea+", fondos: "+ingresoArea+", gastos: "+gastoArea;
+        return "Nombre del area: "+nombreDelArea+", ingresos: "+ingresoArea+", gastos: "+gastoArea;
     }
 
 }

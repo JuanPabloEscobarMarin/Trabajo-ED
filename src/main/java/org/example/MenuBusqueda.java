@@ -63,7 +63,7 @@ public class MenuBusqueda {
     }
 
     @FXML
-    private void SeleccionCliente(ActionEvent event) throws IOException{
+    private void SeleccionarCliente(ActionEvent event) throws IOException{
         if(Cliente.isSelected()){
             Area.setSelected(false);
             Empleado.setSelected(false);
