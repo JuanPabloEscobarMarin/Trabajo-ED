@@ -3,6 +3,7 @@ package org.example;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -39,6 +40,9 @@ public class MenuBusqueda {
 
     @FXML
     public CheckBox Atributo3;
+
+    @FXML
+    public DialogPane Consola;
 
     @FXML
     private void SeleccionArea(ActionEvent event) throws IOException{
@@ -98,12 +102,58 @@ public class MenuBusqueda {
 
     @FXML
     private void Buscar(ActionEvent salir)throws IOException{
+        if (!Area.isSelected() && !Empleado.isSelected() && !Cliente.isSelected()){
+            ErroropcionesClase.setText("Seleccione una clase");
+        } else {
+            ErroropcionesClase.setText("");
+        }
+        if (!Atributo1.isSelected() && !Atributo2.isSelected() && !Atributo3.isSelected()){
+            ErroropcionesAtributo.setText("Seleccione un atributo");
+        } else {
+            ErroropcionesAtributo.setText("");
+        }
+        if (Area.isSelected() && Atributo1.isSelected()){
+            if (!caracterABuscar.getText().equals("")){
+                ErrorcaracterABuscar.setText("");
+                if(App.areas.containsKey(caracterABuscar.getText())){
+                    Consola.setHeaderText("Resultados: ");
+                    Consola.setContentText(String.valueOf(App.areas.get(caracterABuscar.getText())));
+                } else {
+                    Consola.setHeaderText("No se encuentran resultados!");
+                }
+            } else {
+                ErrorcaracterABuscar.setText("Ingrese un valor valido");
+            }
 
+        }
+        if (Empleado.isSelected() && Atributo1.isSelected()){
+            if (!caracterABuscar.getText().equals("")){
+                ErrorcaracterABuscar.setText("");
+                if (App.empleados.containsKey(Integer.parseInt(caracterABuscar.getText()))){
+                    Consola.setHeaderText("Resultados: ");
+                    Consola.setContentText(String.valueOf(App.empleados.get(Integer.valueOf(caracterABuscar.getText()))));
+                } else {
+                    Consola.setHeaderText("No se encuentran resultados!");
+                }
+            } else {
+                ErrorcaracterABuscar.setText("Ingrese un valor valido");
+            }
+        }
+        if (Cliente.isSelected() && Atributo1.isSelected()){
+            if (!caracterABuscar.getText().equals("")){
+                ErrorcaracterABuscar.setText("");
+                if (App.clientes.containsKey(Integer.parseInt(caracterABuscar.getText()))){
+                    Consola.setHeaderText("Resultados: ");
+                    Consola.setContentText(String.valueOf(App.clientes.get(Integer.valueOf(caracterABuscar.getText()))));
+                } else {
+                    Consola.setHeaderText("No se encuentran resultados!");
+                }
+            } else {
+                ErrorcaracterABuscar.setText("Ingrese un valor valido");
+            }
+        }
 
-        //Proceso de busqueda
-
-        App.setRoot("MenuPrincipal");
-    }
+        }
 
     @FXML
     private void Salir(ActionEvent salir)throws IOException {
