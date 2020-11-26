@@ -527,6 +527,9 @@ public class MenuAdministracion {
                     ErrorCrear.setText("");
                     ErrorVer.setText("");
                 }
+                else if(No1.isSelected()){
+                    Informacion.setText("Empleado creado sin relacion");
+                }
             }
         }
         else if(Cliente.isSelected()&&Crear.isSelected()){
@@ -575,6 +578,9 @@ public class MenuAdministracion {
                     LabelRelacion1.setText("");
                     ErrorCrear.setText("");
                     ErrorVer.setText("");
+                }
+                else if(No1.isSelected()){
+                    Informacion.setText("Cliente creado sin relacion");
                 }
             }
         }
