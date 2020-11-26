@@ -529,6 +529,30 @@ public class MenuAdministracion {
                 }
                 else if(No1.isSelected()){
                     Informacion.setText("Empleado creado sin relacion");
+                    Area.setSelected(false);
+                    Cliente.setSelected(false);
+                    Informacion.setText("");
+                    Texto.setVisible(false);
+                    BotonVer.setVisible(false);
+                    IngresarTexto.setText("");
+                    BotonEliminar.setVisible(false);
+                    Texto1.setVisible(false);
+                    Texto2.setVisible(false);
+                    Texto3.setVisible(false);
+                    Texto4.setVisible(false);
+                    RelacionTexto1.setVisible(false);
+                    Si1.setVisible(false);
+                    No1.setVisible(false);
+                    BotonCrear.setVisible(false);
+                    Atributo1.setText("");
+                    Atributo2.setText("");
+                    Atributo3.setText("");
+                    Atributo4.setText("");
+                    Relacion1.setText("");
+                    LabelRelacion1.setText("");
+                    LabelRelacion1.setText("");
+                    ErrorCrear.setText("");
+                    ErrorVer.setText("");
                 }
             }
         }
@@ -581,6 +605,30 @@ public class MenuAdministracion {
                 }
                 else if(No1.isSelected()){
                     Informacion.setText("Cliente creado sin relacion");
+                    Area.setSelected(false);
+                    Cliente.setSelected(false);
+                    Informacion.setText("");
+                    Texto.setVisible(false);
+                    BotonVer.setVisible(false);
+                    IngresarTexto.setText("");
+                    BotonEliminar.setVisible(false);
+                    Texto1.setVisible(false);
+                    Texto2.setVisible(false);
+                    Texto3.setVisible(false);
+                    Texto4.setVisible(false);
+                    RelacionTexto1.setVisible(false);
+                    Si1.setVisible(false);
+                    No1.setVisible(false);
+                    BotonCrear.setVisible(false);
+                    Atributo1.setText("");
+                    Atributo2.setText("");
+                    Atributo3.setText("");
+                    Atributo4.setText("");
+                    Relacion1.setText("");
+                    LabelRelacion1.setText("");
+                    LabelRelacion1.setText("");
+                    ErrorCrear.setText("");
+                    ErrorVer.setText("");
                 }
             }
         }
