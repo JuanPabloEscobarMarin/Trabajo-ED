@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -24,7 +25,7 @@
       <TextField fx:id="Texto" layoutX="358.0" layoutY="166.0" visible="false" />
       <Button layoutX="528.0" layoutY="315.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
       <Button layoutX="536.0" layoutY="350.0" mnemonicParsing="false" onAction="#Salir" text="Volver" />
-      <Label fx:id="Informacion" layoutX="33.0" layoutY="345.0" prefHeight="30.0" prefWidth="487.0">
+      <Label fx:id="Informacion" layoutX="34.0" layoutY="360.0" prefHeight="30.0" prefWidth="487.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -48,7 +49,30 @@
       <Label fx:id="Relacion1" layoutX="337.0" layoutY="183.0" />
       <Label fx:id="LabelRelacion1" layoutX="317.0" layoutY="226.0" />
       <TextField fx:id="RelacionTexto1" layoutX="423.0" layoutY="222.0" visible="false" />
-      <Label fx:id="ErrorCrear" layoutX="246.0" layoutY="342.0" prefHeight="17.0" prefWidth="210.0" textFill="RED" />
-      <Label fx:id="ErrorVer" layoutX="256.0" layoutY="351.0" prefHeight="17.0" prefWidth="210.0" textFill="RED" />
+      <Label fx:id="ErrorCrear" layoutX="226.0" layoutY="342.0" prefHeight="17.0" prefWidth="230.0" textFill="RED" />
+      <Label fx:id="ErrorVer" layoutX="213.0" layoutY="351.0" prefHeight="17.0" prefWidth="253.0" textFill="RED" />
+      <Button fx:id="BotonEditar" layoutX="535.0" layoutY="281.0" mnemonicParsing="false" onAction="#ActionEditar" text="Editar" visible="false" />
+      <CheckBox fx:id="Atributos" layoutX="97.0" layoutY="201.0" mnemonicParsing="false" onAction="#ActionAtributos" text="Atributos" visible="false" />
+      <CheckBox fx:id="Relaciones" layoutX="364.0" layoutY="201.0" mnemonicParsing="false" onAction="#ActionRelaciones" text="Relaciones" visible="false" />
+      <Label fx:id="Atributoeditar1" layoutX="4.0" layoutY="226.0" prefHeight="17.0" prefWidth="74.0" />
+      <Label fx:id="Atributoeditar2" layoutX="4.0" layoutY="258.0" prefHeight="17.0" prefWidth="74.0" />
+      <Label fx:id="Atributoeditar3" layoutX="8.0" layoutY="295.0" prefHeight="17.0" prefWidth="73.0" />
+      <Label fx:id="Atributoeditar4" layoutX="8.0" layoutY="334.0" prefHeight="17.0" prefWidth="73.0" />
+      <TextField fx:id="TextoEditar1" layoutX="93.0" layoutY="222.0" visible="false" />
+      <TextField fx:id="TextoEditar2" layoutX="93.0" layoutY="254.0" visible="false" />
+      <TextField fx:id="TextoEditar3" layoutX="93.0" layoutY="291.0" visible="false" />
+      <TextField fx:id="TextoEditar4" layoutX="93.0" layoutY="330.0" visible="false" />
+      <CheckBox fx:id="BoxRelacion1" layoutX="328.0" layoutY="235.0" mnemonicParsing="false" onAction="#ActionRelacion1" text="CheckBox" visible="false" />
+      <CheckBox fx:id="BoxRelacion2" layoutX="328.0" layoutY="300.0" mnemonicParsing="false" onAction="#ActionRelacion2" text="CheckBox" visible="false" />
+      <Label fx:id="RelacionEditar1" layoutX="277.0" layoutY="270.0" />
+      <TextField fx:id="TextoRelacionEditar1" layoutX="336.0" layoutY="263.0" visible="false" />
+      <TextField fx:id="TextoRelacionEditar2" layoutX="336.0" layoutY="322.0" visible="false" />
+      <Label fx:id="RelacionEditar2" layoutX="277.0" layoutY="331.0" />
+      <Label fx:id="ErrorEditar" layoutX="183.0" layoutY="367.0" prefHeight="17.0" prefWidth="185.0" textFill="RED" />
+      <ImageView fitHeight="97.0" fitWidth="92.0" layoutX="493.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="BotonBuscar" layoutX="533.0" layoutY="283.0" mnemonicParsing="false" onAction="#ActionBuscar" text="Buscar" visible="false" />
+      <CheckBox fx:id="BoxRelacion11" layoutX="420.0" layoutY="235.0" mnemonicParsing="false" onAction="#ActionRelacion11" text="CheckBox" visible="false" />
+      <CheckBox fx:id="BoxRelacion22" layoutX="420.0" layoutY="298.0" mnemonicParsing="false" onAction="#ActionRelacion22" text="CheckBox" visible="false" />
+      <Label fx:id="ErrorEliminar" layoutX="264.0" layoutY="306.0" textFill="RED" />
    </children>
 </AnchorPane>

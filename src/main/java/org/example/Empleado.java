@@ -1,5 +1,9 @@
 package org.example;
 
+import org.jgrapht.Graphs;
+
+import java.util.ArrayList;
+
 public class Empleado {
     public String nombre;
     public int cedula;
@@ -16,5 +20,21 @@ public class Empleado {
     @Override
     public String toString(){
         return "Nombre : "+nombre+", cedula: "+cedula+", edad: "+edad+", salario: "+salario;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        if(obj==this){
+            return true;
+        }
+        if(!(obj instanceof Empleado)){
+            return false;
+        }
+        Empleado empleado =(Empleado) obj;
+        return empleado.cedula==this.cedula;
+    }
+
+    public ArrayList<Object> relaciones(){
+        return new ArrayList<>(Graphs.neighborListOf(App.sistema, this));
     }
 }
