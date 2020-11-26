@@ -117,9 +117,10 @@ public class MenuBusqueda {
                 ErrorcaracterABuscar.setText("");
                 if(App.areas.containsKey(caracterABuscar.getText().toLowerCase())){
                     Consola.setHeaderText("Resultados: ");
-                    Consola.setContentText(String.valueOf(App.areas.get(caracterABuscar.getText())));
+                    Consola.setContentText(String.valueOf(App.areas.get(caracterABuscar.getText().toLowerCase())));
                 } else {
                     Consola.setHeaderText("No se encuentran resultados!");
+                    Consola.setContentText("");
                 }
             } else {
                 ErrorcaracterABuscar.setText("Ingrese un valor valido");
@@ -135,6 +136,7 @@ public class MenuBusqueda {
                         Consola.setContentText(String.valueOf(App.empleados.get(Integer.valueOf(caracterABuscar.getText()))));
                     } else {
                         Consola.setHeaderText("No se encuentran resultados!");
+                        Consola.setContentText("");
                     }
                 } catch (NumberFormatException nfe) {
                     ErrorcaracterABuscar.setText("Valor invalido!");
@@ -153,6 +155,7 @@ public class MenuBusqueda {
                         Consola.setContentText(String.valueOf(App.clientes.get(Integer.valueOf(caracterABuscar.getText()))));
                     } else {
                         Consola.setHeaderText("No se encuentran resultados!");
+                        Consola.setContentText("");
                     }
                 } catch (NumberFormatException nfe){
                     ErrorcaracterABuscar.setText("Valor invalido!");
@@ -163,7 +166,6 @@ public class MenuBusqueda {
         }
 
         if (Area.isSelected() && Atributo2.isSelected()){
-
         }
             Area.setSelected(false);
             Empleado.setSelected(false);
