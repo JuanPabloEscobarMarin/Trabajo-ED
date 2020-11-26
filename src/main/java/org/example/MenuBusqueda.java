@@ -115,7 +115,7 @@ public class MenuBusqueda {
         if (Area.isSelected() && Atributo1.isSelected()){
             if (!caracterABuscar.getText().equals("")){
                 ErrorcaracterABuscar.setText("");
-                if(App.areas.containsKey(caracterABuscar.getText())){
+                if(App.areas.containsKey(caracterABuscar.getText().toLowerCase())){
                     Consola.setHeaderText("Resultados: ");
                     Consola.setContentText(String.valueOf(App.areas.get(caracterABuscar.getText())));
                 } else {
@@ -124,35 +124,54 @@ public class MenuBusqueda {
             } else {
                 ErrorcaracterABuscar.setText("Ingrese un valor valido");
             }
+        }
 
-        }
-        if (Empleado.isSelected() && Atributo1.isSelected()){
-            if (!caracterABuscar.getText().equals("")){
+        if (Empleado.isSelected() && Atributo1.isSelected()) {
+            if (!caracterABuscar.getText().equals("")) {
                 ErrorcaracterABuscar.setText("");
-                if (App.empleados.containsKey(Integer.parseInt(caracterABuscar.getText()))){
-                    Consola.setHeaderText("Resultados: ");
-                    Consola.setContentText(String.valueOf(App.empleados.get(Integer.valueOf(caracterABuscar.getText()))));
-                } else {
-                    Consola.setHeaderText("No se encuentran resultados!");
-                }
-            } else {
-                ErrorcaracterABuscar.setText("Ingrese un valor valido");
-            }
-        }
-        if (Cliente.isSelected() && Atributo1.isSelected()){
-            if (!caracterABuscar.getText().equals("")){
-                ErrorcaracterABuscar.setText("");
-                if (App.clientes.containsKey(Integer.parseInt(caracterABuscar.getText()))){
-                    Consola.setHeaderText("Resultados: ");
-                    Consola.setContentText(String.valueOf(App.clientes.get(Integer.valueOf(caracterABuscar.getText()))));
-                } else {
-                    Consola.setHeaderText("No se encuentran resultados!");
+                try {
+                    if (App.empleados.containsKey(Integer.parseInt(caracterABuscar.getText()))) {
+                        Consola.setHeaderText("Resultados: ");
+                        Consola.setContentText(String.valueOf(App.empleados.get(Integer.valueOf(caracterABuscar.getText()))));
+                    } else {
+                        Consola.setHeaderText("No se encuentran resultados!");
+                    }
+                } catch (NumberFormatException nfe) {
+                    ErrorcaracterABuscar.setText("Valor invalido!");
                 }
             } else {
                 ErrorcaracterABuscar.setText("Ingrese un valor valido");
             }
         }
 
+        if (Cliente.isSelected() && Atributo1.isSelected()) {
+            if (!caracterABuscar.getText().equals("")) {
+                ErrorcaracterABuscar.setText("");
+                try {
+                    if (App.clientes.containsKey(Integer.parseInt(caracterABuscar.getText()))) {
+                        Consola.setHeaderText("Resultados: ");
+                        Consola.setContentText(String.valueOf(App.clientes.get(Integer.valueOf(caracterABuscar.getText()))));
+                    } else {
+                        Consola.setHeaderText("No se encuentran resultados!");
+                    }
+                } catch (NumberFormatException nfe){
+                    ErrorcaracterABuscar.setText("Valor invalido!");
+                }
+            } else {
+                ErrorcaracterABuscar.setText("Ingrese un valor valido");
+            }
+        }
+
+        if (Area.isSelected() && Atributo2.isSelected()){
+
+        }
+            Area.setSelected(false);
+            Empleado.setSelected(false);
+            Cliente.setSelected(false);
+            Atributo1.setSelected(false);
+            Atributo2.setSelected(false);
+            Atributo3.setSelected(false);
+            caracterABuscar.setText("");
         }
 
     @FXML
