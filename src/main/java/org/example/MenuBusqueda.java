@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.util.Hashtable;
+import java.util.TreeMap;
 
 public class MenuBusqueda {
 
@@ -45,19 +47,19 @@ public class MenuBusqueda {
     public DialogPane Consola;
 
     @FXML
-    private void SeleccionArea(ActionEvent event) throws IOException{
-        if(Area.isSelected()){
+    private void SeleccionArea(ActionEvent event) throws IOException {
+        if (Area.isSelected()) {
             Empleado.setSelected(false);
             Cliente.setSelected(false);
-            Atributo1.setText("Nombre");
+            Atributo1.setText("ID");
             Atributo2.setText("Ingresos");
-            Atributo3.setText("Sede");
+            Atributo3.setText("Nombre");
         }
     }
 
     @FXML
-    private void SeleccionEmpleado(ActionEvent event) throws IOException{
-        if(Empleado.isSelected()){
+    private void SeleccionEmpleado(ActionEvent event) throws IOException {
+        if (Empleado.isSelected()) {
             Area.setSelected(false);
             Cliente.setSelected(false);
             Atributo1.setText("Cedula");
@@ -67,8 +69,8 @@ public class MenuBusqueda {
     }
 
     @FXML
-    private void SeleccionarCliente(ActionEvent event) throws IOException{
-        if(Cliente.isSelected()){
+    private void SeleccionarCliente(ActionEvent event) throws IOException {
+        if (Cliente.isSelected()) {
             Area.setSelected(false);
             Empleado.setSelected(false);
             Atributo1.setText("Cedula");
@@ -76,51 +78,62 @@ public class MenuBusqueda {
             Atributo3.setText("Nombre");
         }
     }
+
     @FXML
-    private void SeleccionarAtributo1(ActionEvent event)throws IOException{
-        if(Atributo1.isSelected()){
+    private void SeleccionarAtributo1(ActionEvent event) throws IOException {
+        if (Atributo1.isSelected()) {
             Atributo2.setSelected(false);
             Atributo3.setSelected(false);
         }
     }
 
     @FXML
-    private void SeleccionarAtributo2(ActionEvent event)throws IOException{
-        if(Atributo2.isSelected()){
+    private void SeleccionarAtributo2(ActionEvent event) throws IOException {
+        if (Atributo2.isSelected()) {
             Atributo1.setSelected(false);
             Atributo3.setSelected(false);
         }
     }
 
     @FXML
-    private void SeleccionarAtributo3(ActionEvent event) throws IOException{
-        if(Atributo3.isSelected()){
+    private void SeleccionarAtributo3(ActionEvent event) throws IOException {
+        if (Atributo3.isSelected()) {
             Atributo1.setSelected(false);
             Atributo2.setSelected(false);
         }
     }
 
     @FXML
-    private void Buscar(ActionEvent salir)throws IOException{
-        if (!Area.isSelected() && !Empleado.isSelected() && !Cliente.isSelected()){
+    private void Buscar(ActionEvent salir) throws IOException {
+        if (!Area.isSelected() && !Empleado.isSelected() && !Cliente.isSelected()) {
             ErroropcionesClase.setText("Seleccione una clase");
         } else {
             ErroropcionesClase.setText("");
         }
-        if (!Atributo1.isSelected() && !Atributo2.isSelected() && !Atributo3.isSelected()){
+        if (!Atributo1.isSelected() && !Atributo2.isSelected() && !Atributo3.isSelected()) {
             ErroropcionesAtributo.setText("Seleccione un atributo");
         } else {
             ErroropcionesAtributo.setText("");
         }
-        if (Area.isSelected() && Atributo1.isSelected()){
-            if (!caracterABuscar.getText().equals("")){
+        if (Area.isSelected() && Atributo1.isSelected()) {
+            if (!caracterABuscar.getText().equals("")) {
                 ErrorcaracterABuscar.setText("");
-                if(App.areas.containsKey(caracterABuscar.getText().toLowerCase())){
-                    Consola.setHeaderText("Resultados: ");
-                    Consola.setContentText(String.valueOf(App.areas.get(caracterABuscar.getText().toLowerCase())));
-                } else {
-                    Consola.setHeaderText("No se encuentran resultados!");
-                    Consola.setContentText("");
+                int count = 1;
+                Hashtable<Integer, Area> ID = new Hashtable<>();
+                for (Area areas : App.areas.values()) {
+                    ID.put(count, areas);
+                    count ++;
+                }
+                try {
+                    if (ID.containsKey(Integer.valueOf(caracterABuscar.getText()))) {
+                        Consola.setHeaderText("Resultados: ");
+                        Consola.setContentText(String.valueOf(ID.get(Integer.valueOf(caracterABuscar.getText()))));
+                    } else {
+                        Consola.setHeaderText("No se encuentran resultados!");
+                        Consola.setContentText("");
+                    }
+                } catch (NumberFormatException nfe){
+                    Consola.setHeaderText("Valor invalido!");
                 }
             } else {
                 ErrorcaracterABuscar.setText("Ingrese un valor valido");
@@ -157,7 +170,7 @@ public class MenuBusqueda {
                         Consola.setHeaderText("No se encuentran resultados!");
                         Consola.setContentText("");
                     }
-                } catch (NumberFormatException nfe){
+                } catch (NumberFormatException nfe) {
                     ErrorcaracterABuscar.setText("Valor invalido!");
                 }
             } else {
@@ -165,7 +178,27 @@ public class MenuBusqueda {
             }
         }
 
-        if (Area.isSelected() && Atributo2.isSelected()){
+        if (Area.isSelected() && Atributo2.isSelected()) {
+            if (!caracterABuscar.getText().equals("")) {
+                ErrorcaracterABuscar.setText("");
+                try {
+                    TreeMap<Integer,Area> ingresos = new TreeMap<>();
+                    int count = 1;
+                    for (Area areas : App.areas.values()) {
+                        if (areas.ingresoArea == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
+                            if (ingresos.containsKey(areas.ingresoArea)){
+                                ingresos.put(areas.ingresoArea + count,areas);
+                                count ++;
+                            } else {
+                                ingresos.put(areas.ingresoArea,areas);
+                            }
+                        }
+                    }
+                    Consola.setContentText(String.valueOf(ingresos.values()));
+                } catch (NumberFormatException nfe) {
+                    ErrorcaracterABuscar.setText("Valor invalido!");
+                }
+            }
         }
             Area.setSelected(false);
             Empleado.setSelected(false);
@@ -180,6 +213,4 @@ public class MenuBusqueda {
     private void Salir(ActionEvent salir)throws IOException {
         App.setRoot("MenuPrincipal");
     }
-
-
 }
