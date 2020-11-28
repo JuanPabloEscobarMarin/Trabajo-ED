@@ -567,10 +567,12 @@ public class MenuAdministracion {
             Texto1.setVisible(true);
             Texto2.setVisible(true);
             Texto3.setVisible(true);
+            Texto4.setVisible(true);
             BotonCrear.setVisible(true);
             Atributo1.setText("Nombre");
-            Atributo2.setText("Ingresos");
-            Atributo3.setText("Gastos");
+            Atributo2.setText("Gerente");
+            Atributo3.setText("Ingresos");
+            Atributo4.setText("Gastos");
         }
         else if(Empleado.isSelected()&&Crear.isSelected()){
             Texto1.setVisible(true);
@@ -660,9 +662,11 @@ public class MenuAdministracion {
                 TextoEditar1.setVisible(true);
                 TextoEditar2.setVisible(true);
                 TextoEditar3.setVisible(true);
+                TextoEditar4.setVisible(true);
                 Atributoeditar1.setText("Nombre");
-                Atributoeditar2.setText("ingresos");
-                Atributoeditar3.setText("Gastos");
+                Atributoeditar2.setText("Gerente");
+                Atributoeditar3.setText("Ingresos");
+                Atributoeditar4.setText("Gastos");
             }
             else if(Empleado.isSelected()){
                 TextoEditar1.setVisible(true);
@@ -852,7 +856,7 @@ public class MenuAdministracion {
         else if(Area.isSelected()&&Ver.isSelected()){
             String area = Texto.getText().toLowerCase();
             if(!App.areas.containsKey(area)){
-                ErrorVer.setText("No se encunetra un area con este nombre");
+                ErrorVer.setText("No se encuentra un area con este nombre");
             }
             else{
                 org.example.Area area1=App.areas.get(area);
@@ -957,13 +961,14 @@ public class MenuAdministracion {
             }
             else{
                String Nombre=Texto1.getText().toLowerCase();
-               int Ingresos=Integer.parseInt(Texto2.getText());
-               int Gastos=Integer.parseInt(Texto3.getText());
+               String Gerente=Texto2.getText().toLowerCase();
+               int Ingresos=Integer.parseInt(Texto3.getText());
+               int Gastos=Integer.parseInt(Texto4.getText());
                 if (App.areas.containsKey(Nombre)) {
                     ErrorCrear.setText("Ya se encuentra area registrada con este nombre");
                 }
                 else{
-               org.example.Area nuevaArea=new Area(Nombre,Ingresos,Gastos);
+               org.example.Area nuevaArea=new Area(Nombre,Gerente,Ingresos,Gastos);
                App.areas.put(Nombre,nuevaArea);
                App.sistema.addVertex(nuevaArea);
                Informacion.setText("Area creada con exito");
@@ -1231,9 +1236,10 @@ public class MenuAdministracion {
                         ErrorEditar.setText("Espacios de atributos vacios");
                     } else {
                         String Nombre = TextoEditar1.getText().toLowerCase();
-                        int ingresos = Integer.parseInt(TextoEditar2.getText());
-                        int gastos = Integer.parseInt(TextoEditar3.getText());
-                        org.example.Area areaAux = new Area(Nombre, ingresos, gastos);
+                        String Gerente=TextoEditar2.getText().toLowerCase();
+                        int ingresos = Integer.parseInt(TextoEditar3.getText());
+                        int gastos = Integer.parseInt(TextoEditar4.getText());
+                        org.example.Area areaAux = new Area(Nombre,Gerente, ingresos, gastos);
                         ArrayList<Object>relaciones=areaActual.relaciones();
                         App.sistema.removeAllEdges(areaActual,relaciones);
                         App.sistema.removeVertex(areaActual);

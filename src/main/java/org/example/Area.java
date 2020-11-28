@@ -7,11 +7,13 @@ import java.util.ArrayList;
 public class Area {
 
     public String nombreDelArea;
+    public String Gerente;
     public int ingresoArea;
     public  int gastoArea;
 
-    public Area (String nombreDelArea, int ingresoArea, int gastoArea) {
+    public Area (String nombreDelArea,String Gerente, int ingresoArea, int gastoArea) {
         this.nombreDelArea = nombreDelArea ;
+        this.Gerente=Gerente;
         this.ingresoArea = ingresoArea;
         this.gastoArea= gastoArea;
 
@@ -19,7 +21,7 @@ public class Area {
 
     @Override
     public String toString(){
-        return "Nombre del area: "+nombreDelArea+", ingresos: "+ingresoArea+", gastos: "+gastoArea;
+        return "Nombre del area: "+nombreDelArea+" Gerente "+Gerente+", ingresos: "+ingresoArea+", gastos: "+gastoArea;
     }
     @Override
     public boolean equals(Object obj){

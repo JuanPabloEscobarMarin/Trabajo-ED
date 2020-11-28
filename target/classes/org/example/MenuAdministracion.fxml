@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -69,7 +68,6 @@
       <TextField fx:id="TextoRelacionEditar2" layoutX="336.0" layoutY="322.0" visible="false" />
       <Label fx:id="RelacionEditar2" layoutX="277.0" layoutY="331.0" />
       <Label fx:id="ErrorEditar" layoutX="183.0" layoutY="367.0" prefHeight="17.0" prefWidth="185.0" textFill="RED" />
-      <ImageView fitHeight="97.0" fitWidth="92.0" layoutX="493.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="BotonBuscar" layoutX="533.0" layoutY="283.0" mnemonicParsing="false" onAction="#ActionBuscar" text="Buscar" visible="false" />
       <CheckBox fx:id="BoxRelacion11" layoutX="420.0" layoutY="235.0" mnemonicParsing="false" onAction="#ActionRelacion11" text="CheckBox" visible="false" />
       <CheckBox fx:id="BoxRelacion22" layoutX="420.0" layoutY="298.0" mnemonicParsing="false" onAction="#ActionRelacion22" text="CheckBox" visible="false" />
