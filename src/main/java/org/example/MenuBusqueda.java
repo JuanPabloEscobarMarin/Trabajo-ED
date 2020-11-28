@@ -23,28 +23,28 @@ public class MenuBusqueda {
     public Label ErroropcionesAtributo;
 
     @FXML
-    public static TextField caracterABuscar;
+    public TextField caracterABuscar;
 
     @FXML
-    public static CheckBox Area;
+    public CheckBox Area;
 
     @FXML
-    public static CheckBox Empleado;
+    public CheckBox Empleado;
 
     @FXML
-    public static CheckBox Cliente;
+    public CheckBox Cliente;
 
     @FXML
-    public static CheckBox Atributo1;
+    public CheckBox Atributo1;
 
     @FXML
-    public static CheckBox Atributo2;
+    public CheckBox Atributo2;
 
     @FXML
-    public static CheckBox Atributo3;
+    public CheckBox Atributo3;
 
     @FXML
-    public static DialogPane Consola;
+    public DialogPane Consola;
 
     @FXML
     private void SeleccionArea(ActionEvent event) throws IOException {
@@ -195,7 +195,13 @@ public class MenuBusqueda {
                     }
                 }
             }
-            borrarHistorialOpciones();
+            Area.setSelected(false);
+            Empleado.setSelected(false);
+            Cliente.setSelected(false);
+            Atributo1.setSelected(false);
+            Atributo2.setSelected(false);
+            Atributo3.setSelected(false);
+            caracterABuscar.setText("");
         }
 
         if (Empleado.isSelected()) {
@@ -266,7 +272,13 @@ public class MenuBusqueda {
                     }
                 }
             }
-            borrarHistorialOpciones();
+            Area.setSelected(false);
+            Empleado.setSelected(false);
+            Cliente.setSelected(false);
+            Atributo1.setSelected(false);
+            Atributo2.setSelected(false);
+            Atributo3.setSelected(false);
+            caracterABuscar.setText("");
         }
 
         if (Cliente.isSelected()) {
@@ -337,18 +349,14 @@ public class MenuBusqueda {
                     }
                 }
             }
-            borrarHistorialOpciones();
+            Area.setSelected(false);
+            Empleado.setSelected(false);
+            Cliente.setSelected(false);
+            Atributo1.setSelected(false);
+            Atributo2.setSelected(false);
+            Atributo3.setSelected(false);
+            caracterABuscar.setText("");
         }
-    }
-
-    public static void borrarHistorialOpciones(){
-        Area.setSelected(false);
-        Empleado.setSelected(false);
-        Cliente.setSelected(false);
-        Atributo1.setSelected(false);
-        Atributo2.setSelected(false);
-        Atributo3.setSelected(false);
-        caracterABuscar.setText("");
     }
 
     @FXML
