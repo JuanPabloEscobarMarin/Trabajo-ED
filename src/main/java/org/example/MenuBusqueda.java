@@ -23,28 +23,28 @@ public class MenuBusqueda {
     public Label ErroropcionesAtributo;
 
     @FXML
-    public TextField caracterABuscar;
+    public static TextField caracterABuscar;
 
     @FXML
-    public CheckBox Area;
+    public static CheckBox Area;
 
     @FXML
-    public CheckBox Empleado;
+    public static CheckBox Empleado;
 
     @FXML
-    public CheckBox Cliente;
+    public static CheckBox Cliente;
 
     @FXML
-    public CheckBox Atributo1;
+    public static CheckBox Atributo1;
 
     @FXML
-    public CheckBox Atributo2;
+    public static CheckBox Atributo2;
 
     @FXML
-    public CheckBox Atributo3;
+    public static CheckBox Atributo3;
 
     @FXML
-    public DialogPane Consola;
+    public static DialogPane Consola;
 
     @FXML
     private void SeleccionArea(ActionEvent event) throws IOException {
@@ -114,100 +114,242 @@ public class MenuBusqueda {
             ErroropcionesAtributo.setText("Seleccione un atributo");
         } else {
             ErroropcionesAtributo.setText("");
-        }
-        if (Area.isSelected() && Atributo1.isSelected()) {
-            if (!caracterABuscar.getText().equals("")) {
-                ErrorcaracterABuscar.setText("");
-                int count = 1;
-                Hashtable<Integer, Area> ID = new Hashtable<>();
-                for (Area areas : App.areas.values()) {
-                    ID.put(count, areas);
-                    count ++;
-                }
-                try {
-                    if (ID.containsKey(Integer.valueOf(caracterABuscar.getText()))) {
-                        Consola.setHeaderText("Resultados: ");
-                        Consola.setContentText(String.valueOf(ID.get(Integer.valueOf(caracterABuscar.getText()))));
-                    } else {
-                        Consola.setHeaderText("No se encuentran resultados!");
-                        Consola.setContentText("");
-                    }
-                } catch (NumberFormatException nfe){
-                    Consola.setHeaderText("Valor invalido!");
-                }
-            } else {
-                ErrorcaracterABuscar.setText("Ingrese un valor valido");
-            }
+            ErrorcaracterABuscar.setText("");
         }
 
-        if (Empleado.isSelected() && Atributo1.isSelected()) {
-            if (!caracterABuscar.getText().equals("")) {
-                ErrorcaracterABuscar.setText("");
-                try {
-                    if (App.empleados.containsKey(Integer.parseInt(caracterABuscar.getText()))) {
-                        Consola.setHeaderText("Resultados: ");
-                        Consola.setContentText(String.valueOf(App.empleados.get(Integer.valueOf(caracterABuscar.getText()))));
-                    } else {
-                        Consola.setHeaderText("No se encuentran resultados!");
-                        Consola.setContentText("");
+        if (Area.isSelected()) {
+            if (Atributo1.isSelected()) {
+                //ID
+                if (!caracterABuscar.getText().equals("")) {
+                    int count = 1;
+                    Hashtable<Integer, Area> ID = new Hashtable<>();
+                    for (Area areas : App.areas.values()) {
+                        ID.put(count, areas);
+                        count++;
                     }
-                } catch (NumberFormatException nfe) {
-                    ErrorcaracterABuscar.setText("Valor invalido!");
-                }
-            } else {
-                ErrorcaracterABuscar.setText("Ingrese un valor valido");
-            }
-        }
-
-        if (Cliente.isSelected() && Atributo1.isSelected()) {
-            if (!caracterABuscar.getText().equals("")) {
-                ErrorcaracterABuscar.setText("");
-                try {
-                    if (App.clientes.containsKey(Integer.parseInt(caracterABuscar.getText()))) {
-                        Consola.setHeaderText("Resultados: ");
-                        Consola.setContentText(String.valueOf(App.clientes.get(Integer.valueOf(caracterABuscar.getText()))));
-                    } else {
-                        Consola.setHeaderText("No se encuentran resultados!");
-                        Consola.setContentText("");
+                    //Arreglar generador de ID que es aleatorio y mostrar el ID de cada Area creada
+                    //Quitar ingresar Ingresos en administracion
+                    try {
+                        if (ID.containsKey(Integer.valueOf(caracterABuscar.getText()))) {
+                            Consola.setHeaderText("Resultados: ");
+                            Consola.setContentText(String.valueOf(ID.get(Integer.valueOf(caracterABuscar.getText()))));
+                        } else {
+                            Consola.setHeaderText("No se encuentran resultados!");
+                            Consola.setContentText("");
+                        }
+                    } catch (NumberFormatException nfe) {
+                        Consola.setHeaderText("Valor invalido!");
                     }
-                } catch (NumberFormatException nfe) {
-                    ErrorcaracterABuscar.setText("Valor invalido!");
+                    ID.clear();
+                } else {
+                    ErrorcaracterABuscar.setText("Ingrese un valor valido");
                 }
-            } else {
-                ErrorcaracterABuscar.setText("Ingrese un valor valido");
-            }
-        }
 
-        if (Area.isSelected() && Atributo2.isSelected()) {
-            if (!caracterABuscar.getText().equals("")) {
-                ErrorcaracterABuscar.setText("");
-                try {
-                    TreeMap<Integer,Area> ingresos = new TreeMap<>();
+            }
+            if (Atributo2.isSelected()) {
+                //Ingresos
+                if (!caracterABuscar.getText().equals("")) {
+                    try {
+                        TreeMap<Integer, Area> ingresos = new TreeMap<>();
+                        int count = 1;
+                        for (Area areas : App.areas.values()) {
+                            if (areas.ingresoArea == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
+                                if (ingresos.containsKey(areas.ingresoArea)) {
+                                    ingresos.put(areas.ingresoArea + count, areas);
+                                    count++;
+                                } else {
+                                    ingresos.put(areas.ingresoArea, areas);
+                                }
+                            }
+                        }
+                        if (ingresos.size() == 0) {
+                            Consola.setContentText("No se encontraron resultados");
+                        } else {
+                            Consola.setContentText(String.valueOf(ingresos.values()));
+                        }
+                    } catch (NumberFormatException nfe) {
+                        ErrorcaracterABuscar.setText("Valor invalido!");
+                    }
+                }
+            }
+            if (Atributo3.isSelected()) {
+                //Nombre
+                if (!caracterABuscar.getText().equals("")) {
+                    TreeMap<String, Area> nombres = new TreeMap<>();
+                    //Quitar el for ya que el Nombre es único
                     int count = 1;
                     for (Area areas : App.areas.values()) {
-                        if (areas.ingresoArea == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
-                            if (ingresos.containsKey(areas.ingresoArea)){
-                                ingresos.put(areas.ingresoArea + count,areas);
-                                count ++;
+                        if (areas.nombreDelArea.equals(String.valueOf(caracterABuscar.getText()))) {
+                            if (nombres.containsKey(areas.nombreDelArea)) {
+                                nombres.put(areas.nombreDelArea + count, areas);
+                                count++;
                             } else {
-                                ingresos.put(areas.ingresoArea,areas);
+                                nombres.put(areas.nombreDelArea, areas);
                             }
                         }
                     }
-                    Consola.setContentText(String.valueOf(ingresos.values()));
-                } catch (NumberFormatException nfe) {
-                    ErrorcaracterABuscar.setText("Valor invalido!");
+                    if (nombres.size() == 0) {
+                        Consola.setContentText("No se encontraron resultados");
+                    } else {
+                        Consola.setContentText(String.valueOf(nombres.values()));
+                    }
                 }
             }
+            borrarHistorialOpciones();
         }
-            Area.setSelected(false);
-            Empleado.setSelected(false);
-            Cliente.setSelected(false);
-            Atributo1.setSelected(false);
-            Atributo2.setSelected(false);
-            Atributo3.setSelected(false);
-            caracterABuscar.setText("");
+
+        if (Empleado.isSelected()) {
+            if (Atributo1.isSelected()){
+                //Cedula
+                if (!caracterABuscar.getText().equals("")) {
+                    ErrorcaracterABuscar.setText("");
+                    try {
+                        if (App.empleados.containsKey(Integer.parseInt(caracterABuscar.getText()))) {
+                            Consola.setHeaderText("Resultados: ");
+                            Consola.setContentText(String.valueOf(App.empleados.get(Integer.valueOf(caracterABuscar.getText()))));
+                        } else {
+                            Consola.setHeaderText("No se encuentran resultados!");
+                            Consola.setContentText("");
+                        }
+                    } catch (NumberFormatException nfe) {
+                        ErrorcaracterABuscar.setText("Valor invalido!");
+                    }
+                } else {
+                    ErrorcaracterABuscar.setText("Ingrese un valor valido");
+                }
+            }
+            if (Atributo2.isSelected()){
+                //Edad
+                if (!caracterABuscar.getText().equals("")) {
+                    try {
+                        TreeMap<Integer, Empleado> edades = new TreeMap<>();
+                        int count = 1;
+                        for (Empleado empleados : App.empleados.values()) {
+                            if (empleados.edad == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
+                                if (edades.containsKey(empleados.edad)) {
+                                    edades.put(empleados.edad + count, empleados);
+                                    count++;
+                                } else {
+                                    edades.put(empleados.edad, empleados);
+                                }
+                            }
+                        }
+                        if (edades.size() == 0) {
+                            Consola.setContentText("No se encontraron resultados");
+                        } else {
+                            Consola.setContentText(String.valueOf(edades.values()));
+                        }
+                    } catch (NumberFormatException nfe) {
+                        ErrorcaracterABuscar.setText("Valor invalido!");
+                    }
+                }
+            }
+            if (Atributo3.isSelected()){
+                //Nombre
+                if (!caracterABuscar.getText().equals("")) {
+                    TreeMap<String, Empleado> nombres = new TreeMap<>();
+                    int count = 1;
+                    for (Empleado empleados : App.empleados.values()) {
+                        if (empleados.nombre.equals(String.valueOf(caracterABuscar.getText()))) {
+                            if (nombres.containsKey(empleados.nombre)) {
+                                nombres.put(empleados.nombre + count, empleados);
+                                count++;
+                            } else {
+                                nombres.put(empleados.nombre, empleados);
+                            }
+                        }
+                    }
+                    if (nombres.size() == 0) {
+                        Consola.setContentText("No se encontraron resultados");
+                    } else {
+                        Consola.setContentText(String.valueOf(nombres.values()));
+                    }
+                }
+            }
+            borrarHistorialOpciones();
         }
+
+        if (Cliente.isSelected()) {
+            if (Atributo1.isSelected()){
+                //Cedula
+                if (!caracterABuscar.getText().equals("")) {
+                    ErrorcaracterABuscar.setText("");
+                    try {
+                        if (App.clientes.containsKey(Integer.parseInt(caracterABuscar.getText()))) {
+                            Consola.setHeaderText("Resultados: ");
+                            Consola.setContentText(String.valueOf(App.clientes.get(Integer.valueOf(caracterABuscar.getText()))));
+                        } else {
+                            Consola.setHeaderText("No se encuentran resultados!");
+                            Consola.setContentText("");
+                        }
+                    } catch (NumberFormatException nfe) {
+                        ErrorcaracterABuscar.setText("Valor invalido!");
+                    }
+                } else {
+                    ErrorcaracterABuscar.setText("Ingrese un valor valido");
+                }
+            }
+            if (Atributo2.isSelected()){
+                //Dinero
+                if (!caracterABuscar.getText().equals("")) {
+                    try {
+                        TreeMap<Integer, Cliente> dineros = new TreeMap<>();
+                        int count = 1;
+                        for (Cliente cliente : App.clientes.values()) {
+                            if (cliente.dinero == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
+                                if (dineros.containsKey(cliente.dinero)) {
+                                    dineros.put(cliente.dinero + count, cliente);
+                                    count++;
+                                } else {
+                                    dineros.put(cliente.dinero, cliente);
+                                }
+                            }
+                        }
+                        if (dineros.size() == 0) {
+                            Consola.setContentText("No se encontraron resultados");
+                        } else {
+                            Consola.setContentText(String.valueOf(dineros.values()));
+                        }
+                    } catch (NumberFormatException nfe) {
+                        ErrorcaracterABuscar.setText("Valor invalido!");
+                    }
+                }
+            }
+            if (Atributo3.isSelected()){
+                //Nombre
+                if (!caracterABuscar.getText().equals("")) {
+                    TreeMap<String, Cliente> nombres = new TreeMap<>();
+                    int count = 1;
+                    for (Cliente cliente : App.clientes.values()) {
+                        if (cliente.nombre.equals(String.valueOf(caracterABuscar.getText()))) {
+                            if (nombres.containsKey(cliente.nombre)) {
+                                nombres.put(cliente.nombre + count, cliente);
+                                count++;
+                            } else {
+                                nombres.put(cliente.nombre, cliente);
+                            }
+                        }
+                    }
+                    if (nombres.size() == 0) {
+                        Consola.setContentText("No se encontraron resultados");
+                    } else {
+                        Consola.setContentText(String.valueOf(nombres.values()));
+                    }
+                }
+            }
+            borrarHistorialOpciones();
+        }
+    }
+
+    public static void borrarHistorialOpciones(){
+        Area.setSelected(false);
+        Empleado.setSelected(false);
+        Cliente.setSelected(false);
+        Atributo1.setSelected(false);
+        Atributo2.setSelected(false);
+        Atributo3.setSelected(false);
+        caracterABuscar.setText("");
+    }
 
     @FXML
     private void Salir(ActionEvent salir)throws IOException {
