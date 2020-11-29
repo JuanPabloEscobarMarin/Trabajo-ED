@@ -21,7 +21,7 @@ public class Area {
 
     @Override
     public String toString(){
-        return "Nombre del area: "+nombreDelArea+" Gerente "+Gerente+", ingresos: "+ingresoArea+", gastos: "+gastoArea;
+        return " -Nombre del area: "+nombreDelArea+"; Gerente "+Gerente+"; ingresos: "+ingresoArea+"; gastos: "+gastoArea + "\n";
     }
     @Override
     public boolean equals(Object obj){

@@ -956,7 +956,7 @@ public class MenuAdministracion {
     private void ActionCrear(ActionEvent actionEvent)throws IOException{
 
         if(Area.isSelected()&&Crear.isSelected()){
-            if(Texto1.getText().equals("")||Texto2.getText().equals("")||Texto3.getText().equals("")){
+            if(Texto1.getText().equals("")||Texto2.getText().equals("")||Texto3.getText().equals("")||Texto4.getText().equals("")){
                 ErrorCrear.setText("Falta atributo(s)");
             }
             else{

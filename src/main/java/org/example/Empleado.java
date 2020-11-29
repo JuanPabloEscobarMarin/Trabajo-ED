@@ -19,7 +19,7 @@ public class Empleado {
 
     @Override
     public String toString(){
-        return "Nombre : "+nombre+", cedula: "+cedula+", edad: "+edad+", salario: "+salario;
+        return " -Nombre : "+nombre+"; cedula: "+cedula+"; edad: "+edad+"; salario: "+salario + "\n";
     }
 
     @Override

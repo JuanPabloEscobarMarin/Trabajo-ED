@@ -17,7 +17,7 @@ public class Cliente {
 
     @Override
     public String toString(){
-        return "Nombre : "+nombre+", cedula: "+cedula;
+        return " -Nombre : "+nombre+"; cedula: "+cedula + "\n";
     }
     @Override
     public boolean equals(Object obj){
