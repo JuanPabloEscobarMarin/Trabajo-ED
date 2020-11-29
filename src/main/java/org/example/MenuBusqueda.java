@@ -115,12 +115,11 @@ public class MenuBusqueda {
             ErroropcionesAtributo.setText("");
             ErrorcaracterABuscar.setText("");
         }
-
         if (Area.isSelected()) {
             if (Atributo1.isSelected()) {
                 //Nombre
                 if (!caracterABuscar.getText().equals("")) {
-                        if (App.areas.containsKey(String.valueOf(caracterABuscar.getText()))) {
+                        if (App.areas.containsKey(String.valueOf(caracterABuscar.getText()).toLowerCase())) {
                             Consola.setHeaderText("Resultados: ");
                             Consola.setContentText(String.valueOf(App.areas.get(String.valueOf(caracterABuscar.getText()))));
                         } else {
@@ -139,13 +138,12 @@ public class MenuBusqueda {
                         else{
                             ArrayList<Area>Areas=App.ingresos.get(Integer.parseInt(caracterABuscar.getText()));
                                 Consola.setContentText(String.valueOf(Areas));
-
                         }
-
-
                     } catch (NumberFormatException nfe) {
                         ErrorcaracterABuscar.setText("Valor invalido!");
                     }
+                } else {
+                    ErrorcaracterABuscar.setText("Ingrese un valor");
                 }
             }
             if (Atributo3.isSelected()) {
@@ -163,13 +161,6 @@ public class MenuBusqueda {
                     ErrorcaracterABuscar.setText("Ingrese  un valor");
                 }
             }
-            Area.setSelected(false);
-            Empleado.setSelected(false);
-            Cliente.setSelected(false);
-            Atributo1.setSelected(false);
-            Atributo2.setSelected(false);
-            Atributo3.setSelected(false);
-            caracterABuscar.setText("");
         }
 
         if (Empleado.isSelected()) {
@@ -223,13 +214,6 @@ public class MenuBusqueda {
                     ErrorcaracterABuscar.setText("Ingrese un valor valido");
                 }
             }
-            Area.setSelected(false);
-            Empleado.setSelected(false);
-            Cliente.setSelected(false);
-            Atributo1.setSelected(false);
-            Atributo2.setSelected(false);
-            Atributo3.setSelected(false);
-            caracterABuscar.setText("");
         }
 
         if (Cliente.isSelected()) {
@@ -283,15 +267,14 @@ public class MenuBusqueda {
                     ErrorcaracterABuscar.setText("Ingrese un valor valido");
                 }
                 }
-
-            Area.setSelected(false);
-            Empleado.setSelected(false);
-            Cliente.setSelected(false);
-            Atributo1.setSelected(false);
-            Atributo2.setSelected(false);
-            Atributo3.setSelected(false);
-            caracterABuscar.setText("");
         }
+        Area.setSelected(false);
+        Empleado.setSelected(false);
+        Cliente.setSelected(false);
+        Atributo1.setSelected(false);
+        Atributo2.setSelected(false);
+        Atributo3.setSelected(false);
+        caracterABuscar.setText("");
     }
 
     @FXML
