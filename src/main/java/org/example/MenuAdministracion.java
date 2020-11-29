@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class MenuAdministracion {
     @FXML
-    public Label ErrorClase;
+    public  Label ErrorClase;
     @FXML
     public Label ErrorOpcion;
     @FXML
@@ -175,6 +175,9 @@ public class MenuAdministracion {
             TextoRelacionEditar2.setVisible(false);
             BotonEditar.setVisible(false);
             BotonBuscar.setVisible(false);
+            ErrorClase.setText("");
+            ErrorOpcion.setText("");
+            ErrorText.setText("");
         }
     }
     @FXML
@@ -224,7 +227,10 @@ public class MenuAdministracion {
             TextoRelacionEditar1.setVisible(false);
             TextoRelacionEditar2.setVisible(false);
             BotonEditar.setVisible(false);
-            BotonBuscar.setVisible(false);}
+            BotonBuscar.setVisible(false);
+            ErrorClase.setText("");
+            ErrorOpcion.setText("");
+            ErrorText.setText("");}
     }
     @FXML
     private void SeleccionarCliente(ActionEvent cliente)throws IOException{
@@ -274,6 +280,9 @@ public class MenuAdministracion {
             TextoRelacionEditar2.setVisible(false);
             BotonEditar.setVisible(false);
             BotonBuscar.setVisible(false);
+            ErrorClase.setText("");
+            ErrorOpcion.setText("");
+            ErrorText.setText("");
         }
     }
 
@@ -326,6 +335,9 @@ public class MenuAdministracion {
             TextoRelacionEditar2.setVisible(false);
             BotonEditar.setVisible(false);
             BotonBuscar.setVisible(false);
+            ErrorClase.setText("");
+            ErrorOpcion.setText("");
+            ErrorText.setText("");
         }
     }
     @FXML
@@ -377,6 +389,9 @@ public class MenuAdministracion {
             TextoRelacionEditar2.setVisible(false);
             BotonEditar.setVisible(false);
             BotonBuscar.setVisible(false);
+            ErrorClase.setText("");
+            ErrorOpcion.setText("");
+            ErrorText.setText("");
         }
     }
     @FXML
@@ -428,6 +443,9 @@ public class MenuAdministracion {
             TextoRelacionEditar2.setVisible(false);
             BotonEditar.setVisible(false);
             BotonBuscar.setVisible(false);
+            ErrorClase.setText("");
+            ErrorOpcion.setText("");
+            ErrorText.setText("");
         }
     }
     @FXML
@@ -479,6 +497,9 @@ public class MenuAdministracion {
             TextoRelacionEditar2.setVisible(false);
             BotonEditar.setVisible(false);
             BotonBuscar.setVisible(false);
+            ErrorClase.setText("");
+            ErrorOpcion.setText("");
+            ErrorText.setText("");
         }
     }
 
@@ -527,6 +548,9 @@ public class MenuAdministracion {
         TextoRelacionEditar2.setVisible(false);
         BotonEditar.setVisible(false);
         BotonBuscar.setVisible(false);
+        ErrorClase.setText("");
+        ErrorOpcion.setText("");
+        ErrorText.setText("");
         if(!Area.isSelected()&&!Empleado.isSelected()&&!Cliente.isSelected()){
             ErrorClase.setText("Seleccione una opcion");
         }
@@ -540,28 +564,33 @@ public class MenuAdministracion {
         }
         else if(Area.isSelected()&&Eliminar.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             BotonEliminar.setVisible(true);
             IngresarTexto.setText("Ingrese el nombre de la area");
         }
         else if(Empleado.isSelected()&&Ver.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             BotonVer.setVisible(true);
             IngresarTexto.setText("Ingrese la cedula del empleado");
         }
         else if(Empleado.isSelected()&&Eliminar.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             BotonEliminar.setVisible(true);
             IngresarTexto.setText("Ingrese la cedula del empelado");
         }
         else if(Cliente.isSelected()&&Ver.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             BotonVer.setVisible(true);
             IngresarTexto.setText("Ingrese la cedula del Cliente");
         }
         else if(Cliente.isSelected()&&Eliminar.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             BotonEliminar.setVisible(true);
-            IngresarTexto.setText("Ingrese la cedual del cliente");
+            IngresarTexto.setText("Ingrese la cedula del cliente");
         }
         else if(Area.isSelected()&&Crear.isSelected()){
             Texto1.setVisible(true);
@@ -573,6 +602,10 @@ public class MenuAdministracion {
             Atributo2.setText("Gerente");
             Atributo3.setText("Ingresos");
             Atributo4.setText("Gastos");
+            Texto1.setText("");
+            Texto2.setText("");
+            Texto3.setText("");
+            Texto4.setText("");
         }
         else if(Empleado.isSelected()&&Crear.isSelected()){
             Texto1.setVisible(true);
@@ -587,6 +620,12 @@ public class MenuAdministracion {
             Relacion1.setText("Tiene Area");
             Si1.setVisible(true);
             No1.setVisible(true);
+            Si1.setSelected(false);
+            No1.setSelected(false);
+            Texto1.setText("");
+            Texto2.setText("");
+            Texto3.setText("");
+            Texto4.setText("");
         }
         else if(Cliente.isSelected()&&Crear.isSelected()){
             Texto1.setVisible(true);
@@ -599,19 +638,28 @@ public class MenuAdministracion {
             Relacion1.setText("Tiene Area");
             Si1.setVisible(true);
             No1.setVisible(true);
+            Si1.setSelected(false);
+            No1.setSelected(false);
+            Texto1.setText("");
+            Texto2.setText("");
+            Texto3.setText("");
+
         }
         else if(Area.isSelected()&&Editar.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             IngresarTexto.setText("Ingrese el nombre del area");
             BotonBuscar.setVisible(true);
         }
         else if(Empleado.isSelected()&&Editar.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             IngresarTexto.setText("Ingrese la cedula del empleado");
             BotonBuscar.setVisible(true);
         }
         else if(Cliente.isSelected()&&Editar.isSelected()){
             Texto.setVisible(true);
+            Texto.setText("");
             IngresarTexto.setText("Ingrese la cedula del cliente");
             BotonBuscar.setVisible(true);
         }
@@ -626,6 +674,8 @@ public class MenuAdministracion {
             else {
                 Atributos.setVisible(true);
                 Relaciones.setVisible(true);
+                Atributos.setSelected(false);
+                Relaciones.setSelected(false);
                 BotonBuscar.setVisible(false);
                 BotonEditar.setVisible(true);
             }
@@ -638,6 +688,8 @@ public class MenuAdministracion {
             else {
                 Atributos.setVisible(true);
                 Relaciones.setVisible(true);
+                Atributos.setSelected(false);
+                Relaciones.setSelected(false);
                 BotonBuscar.setVisible(false);
                 BotonEditar.setVisible(true);
             }
@@ -650,6 +702,8 @@ public class MenuAdministracion {
             else {
                 Atributos.setVisible(true);
                 Relaciones.setVisible(true);
+                Atributos.setSelected(false);
+                Relaciones.setSelected(false);
                 BotonBuscar.setVisible(false);
                 BotonEditar.setVisible(true);
             }
@@ -663,6 +717,10 @@ public class MenuAdministracion {
                 TextoEditar2.setVisible(true);
                 TextoEditar3.setVisible(true);
                 TextoEditar4.setVisible(true);
+                TextoEditar1.setText("");
+                TextoEditar2.setText("");
+                TextoEditar3.setText("");
+                TextoEditar4.setText("");
                 Atributoeditar1.setText("Nombre");
                 Atributoeditar2.setText("Gerente");
                 Atributoeditar3.setText("Ingresos");
@@ -673,6 +731,10 @@ public class MenuAdministracion {
                 TextoEditar2.setVisible(true);
                 TextoEditar3.setVisible(true);
                 TextoEditar4.setVisible(true);
+                TextoEditar1.setText("");
+                TextoEditar2.setText("");
+                TextoEditar3.setText("");
+                TextoEditar4.setText("");
                 Atributoeditar1.setText("Nombre");
                 Atributoeditar2.setText("Cedula");
                 Atributoeditar3.setText("Edad");
@@ -682,6 +744,9 @@ public class MenuAdministracion {
                 TextoEditar1.setVisible(true);
                 TextoEditar2.setVisible(true);
                 TextoEditar3.setVisible(true);
+                TextoEditar1.setText("");
+                TextoEditar2.setText("");
+                TextoEditar3.setText("");
                 Atributoeditar1.setText("Nombre");
                 Atributoeditar2.setText("Cedula");
                 Atributoeditar3.setText("Dinero");
@@ -704,6 +769,10 @@ public class MenuAdministracion {
         if(Relaciones.isSelected()){
             if(Area.isSelected()){
                 BoxRelacion1.setVisible(true);
+                BoxRelacion1.setSelected(false);
+                BoxRelacion11.setSelected(false);
+                BoxRelacion2.setSelected(false);
+                BoxRelacion22.setSelected(false);
                 BoxRelacion1.setText("Unir Empleado");
                 BoxRelacion11.setVisible(true);
                 BoxRelacion11.setText("Elimiar Empleado");
@@ -723,6 +792,10 @@ public class MenuAdministracion {
                 BoxRelacion2.setText("Unir Cliente");
                 BoxRelacion22.setVisible(true);
                 BoxRelacion22.setText("Eliminar Cliente");
+                BoxRelacion1.setSelected(false);
+                BoxRelacion11.setSelected(false);
+                BoxRelacion2.setSelected(false);
+                BoxRelacion22.setSelected(false);
             }
             else if(Cliente.isSelected()){
                 BoxRelacion1.setVisible(true);
@@ -733,6 +806,10 @@ public class MenuAdministracion {
                 BoxRelacion2.setText("Unir Empleado");
                 BoxRelacion22.setVisible(true);
                 BoxRelacion22.setText("Eliminar Empleado");
+                BoxRelacion1.setSelected(false);
+                BoxRelacion11.setSelected(false);
+                BoxRelacion2.setSelected(false);
+                BoxRelacion22.setSelected(false);
             }
         }
         else{
@@ -751,14 +828,17 @@ public class MenuAdministracion {
         if(BoxRelacion1.isSelected()){
             if(Area.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
+                TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Cedula");
             }
             else if(Empleado.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
+                TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Nombre");
             }
             else if(Cliente.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
+                TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Nombre");
             }
         }
@@ -772,14 +852,17 @@ public class MenuAdministracion {
         if(BoxRelacion2.isSelected()){
             if(Area.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
+                TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
             }
             else if(Empleado.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
+                TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
             }
             else if(Cliente.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
+                TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
             }
         }
@@ -793,14 +876,17 @@ public class MenuAdministracion {
         if(BoxRelacion11.isSelected()){
             if(Area.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
+                TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Cedula");
             }
             else if(Empleado.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
+                TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Nombre");
             }
             else if(Cliente.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
+                TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Nombre");
             }
         }
@@ -814,14 +900,17 @@ public class MenuAdministracion {
         if(BoxRelacion22.isSelected()){
             if(Area.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
+                TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
             }
             else if(Empleado.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
+                TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
             }
             else if(Cliente.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
+                TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
             }
         }
@@ -836,6 +925,7 @@ public class MenuAdministracion {
             No1.setSelected(false);
             LabelRelacion1.setText("Nombre del Area");
             RelacionTexto1.setVisible(true);
+            RelacionTexto1.setText("");
         }
     }
     @FXML
@@ -849,6 +939,7 @@ public class MenuAdministracion {
     @FXML
     private void ActionVer(ActionEvent actionEvent)throws IOException {
         Informacion.setText("");
+        ErrorVer.setText("");
 
         if(Texto.getText().equals("")){
             ErrorText.setText("Ingrese un valor");
@@ -863,7 +954,6 @@ public class MenuAdministracion {
                 ArrayList<Object>relaciones=area1.relaciones();
                 ErrorVer.setText("");
                 Informacion.setText(App.areas.get(area).toString()+" Tiene: "+relaciones.size()+" relacion(es)");
-
             }
         }
         else if (Empleado.isSelected()&&Ver.isSelected()){
@@ -954,6 +1044,7 @@ public class MenuAdministracion {
     }
     @FXML
     private void ActionCrear(ActionEvent actionEvent)throws IOException{
+        ErrorCrear.setText("");
 
         if(Area.isSelected()&&Crear.isSelected()){
             if(Texto1.getText().equals("")||Texto2.getText().equals("")||Texto3.getText().equals("")||Texto4.getText().equals("")){
@@ -1005,7 +1096,7 @@ public class MenuAdministracion {
                 int Edad = Integer.parseInt(Texto3.getText());
                 int Salario = Integer.parseInt(Texto4.getText());
                 if (App.empleados.containsKey(Cedula)) {
-                    ErrorCrear.setText("Ya se encuentra empelado regsitrado con esta cedula");
+                    ErrorCrear.setText("Ya se encuentra empelado registrado con esta cedula");
                 } else {
                     org.example.Empleado nuevoEmpleado = new Empleado(Nombre, Cedula, Edad, Salario);
                     App.empleados.put(Cedula, nuevoEmpleado);
@@ -1157,6 +1248,7 @@ public class MenuAdministracion {
     }}
     @FXML
     private void ActionEditar(ActionEvent editar)throws IOException{
+        ErrorEditar.setText("");
         if(Area.isSelected()){
             String nombre=Texto.getText();
             if(!App.areas.containsKey(nombre)){

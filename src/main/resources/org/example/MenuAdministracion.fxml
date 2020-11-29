@@ -24,7 +24,7 @@
       <TextField fx:id="Texto" layoutX="358.0" layoutY="166.0" visible="false" />
       <Button layoutX="528.0" layoutY="315.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
       <Button layoutX="537.0" layoutY="348.0" mnemonicParsing="false" onAction="#Salir" text="Volver" />
-      <Label fx:id="Informacion" layoutX="14.0" layoutY="360.0" prefHeight="30.0" prefWidth="519.0">
+      <Label fx:id="Informacion" layoutX="14.0" layoutY="360.0" prefHeight="52.0" prefWidth="519.0">
          <font>
             <Font size="14.0" />
          </font>
