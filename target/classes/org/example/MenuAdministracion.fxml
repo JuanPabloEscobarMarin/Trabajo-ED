@@ -24,14 +24,14 @@
       <TextField fx:id="Texto" layoutX="358.0" layoutY="166.0" visible="false" />
       <Button layoutX="528.0" layoutY="315.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
       <Button layoutX="537.0" layoutY="348.0" mnemonicParsing="false" onAction="#Salir" text="Volver" />
-      <Label fx:id="Informacion" layoutX="14.0" layoutY="360.0" prefHeight="30.0" prefWidth="519.0">
+      <Label fx:id="Informacion" layoutX="14.0" layoutY="360.0" prefHeight="52.0" prefWidth="519.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <Label fx:id="ErrorClase" layoutX="458.0" layoutY="77.0" textFill="RED" />
       <Label fx:id="ErrorOpcion" layoutX="458.0" layoutY="120.0" textFill="RED" />
-      <Label fx:id="ErrorText" layoutX="423.0" layoutY="161.0" textFill="#e10000" />
+      <Label fx:id="ErrorText" layoutX="503.0" layoutY="162.0" prefHeight="17.0" prefWidth="0.0" textFill="#e10000" />
       <Button fx:id="BotonVer" layoutX="544.0" layoutY="281.0" mnemonicParsing="false" onAction="#ActionVer" text="Ver" visible="false" />
       <Button fx:id="BotonEliminar" layoutX="532.0" layoutY="282.0" mnemonicParsing="false" onAction="#ActionEliminar" text="Eliminar" visible="false" />
       <Label fx:id="Atributo1" layoutX="27.0" layoutY="170.0" />

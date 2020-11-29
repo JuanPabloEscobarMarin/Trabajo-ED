@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.util.TreeMap;
+import java.util.ArrayList;
 
 public class MenuBusqueda {
 
@@ -133,23 +133,16 @@ public class MenuBusqueda {
                 //Ingresos
                 if (!caracterABuscar.getText().equals("")) {
                     try {
-                        TreeMap<Integer, Area> ingresos = new TreeMap<>();
-                        int count = 1;
-                        for (Area areas : App.areas.values()) {
-                            if (areas.ingresoArea == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
-                                if (ingresos.containsKey(areas.ingresoArea)) {
-                                    ingresos.put(areas.ingresoArea + count, areas);
-                                    count++;
-                                } else {
-                                    ingresos.put(areas.ingresoArea, areas);
-                                }
-                            }
-                        }
-                        if (ingresos.size() == 0) {
+                        if(!App.ingresos.containsKey(Integer.parseInt(caracterABuscar.getText()))){
                             Consola.setContentText("No se encontraron resultados");
-                        } else {
-                            Consola.setContentText(String.valueOf(ingresos.values()));
                         }
+                        else{
+                            ArrayList<Area>Areas=App.ingresos.get(Integer.parseInt(caracterABuscar.getText()));
+                                Consola.setContentText(String.valueOf(Areas));
+
+                        }
+
+
                     } catch (NumberFormatException nfe) {
                         ErrorcaracterABuscar.setText("Valor invalido!");
                     }
@@ -158,23 +151,16 @@ public class MenuBusqueda {
             if (Atributo3.isSelected()) {
                 //Gerente
                 if (!caracterABuscar.getText().equals("")) {
-                    TreeMap<String, Area> gerentes = new TreeMap<>();
-                    StringBuilder plus = new StringBuilder("#");
-                    for (Area areas : App.areas.values()) {
-                        if (areas.Gerente.equals(String.valueOf(caracterABuscar.getText()))) {
-                            if (gerentes.containsKey(String.valueOf(areas.Gerente))) {
-                                gerentes.put(areas.Gerente + plus, areas);
-                                plus.append("#");
-                            } else {
-                                gerentes.put(areas.Gerente, areas);
-                            }
-                        }
-                    }
-                    if (gerentes.size() == 0) {
+                    if(!App.Gerentes.containsKey(caracterABuscar.getText().toLowerCase())){
                         Consola.setContentText("No se encontraron resultados");
-                    } else {
-                        Consola.setContentText(String.valueOf(gerentes.values()));
                     }
+                    else{
+                        ArrayList<Area>Areas=App.Gerentes.get(caracterABuscar.getText().toLowerCase());
+                        Consola.setContentText(String.valueOf(Areas));
+                    }
+                }
+                else{
+                    ErrorcaracterABuscar.setText("Ingrese  un valor");
                 }
             }
             Area.setSelected(false);
@@ -210,22 +196,12 @@ public class MenuBusqueda {
                 //Edad
                 if (!caracterABuscar.getText().equals("")) {
                     try {
-                        TreeMap<Integer, Empleado> edades = new TreeMap<>();
-                        int count = 1;
-                        for (Empleado empleados : App.empleados.values()) {
-                            if (empleados.edad == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
-                                if (edades.containsKey(empleados.edad)) {
-                                    edades.put(empleados.edad + count, empleados);
-                                    count++;
-                                } else {
-                                    edades.put(empleados.edad, empleados);
-                                }
-                            }
-                        }
-                        if (edades.size() == 0) {
+                        if(!App.edades.containsKey(Integer.parseInt(caracterABuscar.getText()))){
                             Consola.setContentText("No se encontraron resultados");
-                        } else {
-                            Consola.setContentText(String.valueOf(edades.values()));
+                        }
+                        else{
+                            ArrayList<Empleado>Empleados=App.edades.get(Integer.parseInt(caracterABuscar.getText()));
+                            Consola.setContentText(String.valueOf(Empleados));
                         }
                     } catch (NumberFormatException nfe) {
                         ErrorcaracterABuscar.setText("Valor invalido!");
@@ -235,23 +211,16 @@ public class MenuBusqueda {
             if (Atributo3.isSelected()){
                 //Nombre
                 if (!caracterABuscar.getText().equals("")) {
-                    TreeMap<String, Empleado> nombres = new TreeMap<>();
-                    int count = 1;
-                    for (Empleado empleados : App.empleados.values()) {
-                        if (empleados.nombre.equals(String.valueOf(caracterABuscar.getText()))) {
-                            if (nombres.containsKey(empleados.nombre)) {
-                                nombres.put(empleados.nombre + count, empleados);
-                                count++;
-                            } else {
-                                nombres.put(empleados.nombre, empleados);
-                            }
-                        }
-                    }
-                    if (nombres.size() == 0) {
+                    if(!App.NombreEmpleado.containsKey(caracterABuscar.getText().toLowerCase())){
                         Consola.setContentText("No se encontraron resultados");
-                    } else {
-                        Consola.setContentText(String.valueOf(nombres.values()));
                     }
+                    else{
+                        ArrayList<Empleado>Empleados=App.NombreEmpleado.get(caracterABuscar.getText().toLowerCase());
+                        Consola.setContentText(String.valueOf(Empleados));
+                    }
+                }
+                else{
+                    ErrorcaracterABuscar.setText("Ingrese un valor valido");
                 }
             }
             Area.setSelected(false);
@@ -287,22 +256,12 @@ public class MenuBusqueda {
                 //Dinero
                 if (!caracterABuscar.getText().equals("")) {
                     try {
-                        TreeMap<Integer, Cliente> dineros = new TreeMap<>();
-                        int count = 1;
-                        for (Cliente cliente : App.clientes.values()) {
-                            if (cliente.dinero == Integer.parseInt(String.valueOf(caracterABuscar.getText()))) {
-                                if (dineros.containsKey(cliente.dinero)) {
-                                    dineros.put(cliente.dinero + count, cliente);
-                                    count++;
-                                } else {
-                                    dineros.put(cliente.dinero, cliente);
-                                }
-                            }
-                        }
-                        if (dineros.size() == 0) {
+                        if(!App.Dinero.containsKey(Integer.parseInt(caracterABuscar.getText()))){
                             Consola.setContentText("No se encontraron resultados");
-                        } else {
-                            Consola.setContentText(String.valueOf(dineros.values()));
+                        }
+                        else{
+                            ArrayList<Cliente>clientes=App.Dinero.get(Integer.parseInt(caracterABuscar.getText()));
+                            Consola.setContentText(String.valueOf(clientes));
                         }
                     } catch (NumberFormatException nfe) {
                         ErrorcaracterABuscar.setText("Valor invalido!");
@@ -312,25 +271,19 @@ public class MenuBusqueda {
             if (Atributo3.isSelected()){
                 //Nombre
                 if (!caracterABuscar.getText().equals("")) {
-                    TreeMap<String, Cliente> nombres = new TreeMap<>();
-                    int count = 1;
-                    for (Cliente cliente : App.clientes.values()) {
-                        if (cliente.nombre.equals(String.valueOf(caracterABuscar.getText()))) {
-                            if (nombres.containsKey(cliente.nombre)) {
-                                nombres.put(cliente.nombre + count, cliente);
-                                count++;
-                            } else {
-                                nombres.put(cliente.nombre, cliente);
-                            }
-                        }
-                    }
-                    if (nombres.size() == 0) {
+                    if(!App.NombreClientes.containsKey(caracterABuscar.getText().toLowerCase())){
                         Consola.setContentText("No se encontraron resultados");
-                    } else {
-                        Consola.setContentText(String.valueOf(nombres.values()));
+                    }
+                    else{
+                        ArrayList<Cliente>clientes=App.NombreClientes.get(caracterABuscar.getText().toLowerCase());
+                        Consola.setContentText(String.valueOf(clientes));
                     }
                 }
-            }
+                else{
+                    ErrorcaracterABuscar.setText("Ingrese un valor valido");
+                }
+                }
+
             Area.setSelected(false);
             Empleado.setSelected(false);
             Cliente.setSelected(false);

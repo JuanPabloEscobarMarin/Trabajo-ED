@@ -1000,6 +1000,14 @@ public class MenuAdministracion {
                     App.sistema.removeAllEdges(area1, relaciones);
                     App.sistema.removeVertex(area1);
                     App.areas.remove(area);
+                    int ingresos= area1.ingresoArea;
+                    ArrayList<Area> Areas=App.ingresos.get(ingresos);
+                    Areas.remove(area1);
+                    App.ingresos.replace(ingresos,Areas);
+                    String Gerente=area1.Gerente;
+                    ArrayList<Area> Areas2=App.Gerentes.get(Gerente);
+                    Areas2.remove(area1);
+                    App.Gerentes.replace(Gerente,Areas2);
                     ErrorEliminar.setText("");
                     Informacion.setText("Area Borrada con exito");
                     BotonEliminar.setVisible(false);
@@ -1017,6 +1025,14 @@ public class MenuAdministracion {
                     App.sistema.removeAllEdges(empleado1, relaciones);
                     App.sistema.removeVertex(empleado1);
                     App.empleados.remove(empleado);
+                    int edad= empleado1.edad;
+                    ArrayList<Empleado> Empleados=App.edades.get(edad);
+                    Empleados.remove(empleado1);
+                    App.edades.replace(edad,Empleados);
+                    String Nombre= empleado1.nombre;
+                    ArrayList<Empleado> Empleados2=App.NombreEmpleado.get(Nombre);
+                    Empleados2.remove(empleado1);
+                    App.NombreEmpleado.replace(Nombre,Empleados2);
                     ErrorEliminar.setText("");
                     Informacion.setText("Empleado Borrado con exito");
                     BotonEliminar.setVisible(false);
@@ -1034,6 +1050,14 @@ public class MenuAdministracion {
                 App.sistema.removeAllEdges(cliente1, relaciones);
                 App.sistema.removeVertex(cliente1);
                 App.clientes.remove(cliente);
+                int dinero= cliente1.dinero;
+                    ArrayList<Cliente>Clientes=App.Dinero.get(dinero);
+                    Clientes.remove(cliente1);
+                    App.Dinero.replace(dinero,Clientes);
+                    String Nombre= cliente1.nombre;
+                    ArrayList<Cliente>Clientes2=App.NombreClientes.get(Nombre);
+                    Clientes2.remove(cliente1);
+                    App.NombreClientes.replace(Nombre,Clientes2);
                     ErrorEliminar.setText("");
                 Informacion.setText("Cliente Borrado con exito");
                 BotonEliminar.setVisible(false);
@@ -1062,6 +1086,28 @@ public class MenuAdministracion {
                org.example.Area nuevaArea=new Area(Nombre,Gerente,Ingresos,Gastos);
                App.areas.put(Nombre,nuevaArea);
                App.sistema.addVertex(nuevaArea);
+               if(!App.ingresos.containsKey(Ingresos)){
+                   App.ingresos.put(Ingresos,new ArrayList<>());
+                   ArrayList<Area>areas=App.ingresos.get(Ingresos);
+                   areas.add(nuevaArea);
+                   App.ingresos.replace(Ingresos,areas);
+               }
+               else{
+                   ArrayList<Area> areas=App.ingresos.get(Ingresos);
+                   areas.add(nuevaArea);
+                   App.ingresos.replace(Ingresos,areas);
+               }
+               if(!App.Gerentes.containsKey(Gerente)){
+                   App.Gerentes.put(Gerente,new ArrayList<>());
+                   ArrayList<Area>areas2=App.Gerentes.get(Gerente);
+                   areas2.add(nuevaArea);
+                   App.Gerentes.replace(Gerente,areas2);
+               }
+               else{
+                   ArrayList<Area>areas2=App.Gerentes.get(Gerente);
+                   areas2.add(nuevaArea);
+                   App.Gerentes.replace(Gerente,areas2);
+               }
                Informacion.setText("Area creada con exito");
                 Texto.setVisible(false);
                 BotonVer.setVisible(false);
@@ -1163,6 +1209,28 @@ public class MenuAdministracion {
                         ErrorCrear.setText("");
                         ErrorVer.setText("");
                     }
+                    if(!App.edades.containsKey(Edad)){
+                        App.edades.put(Edad,new ArrayList<>());
+                        ArrayList<Empleado>empleados=App.edades.get(Edad);
+                        empleados.add(nuevoEmpleado);
+                        App.edades.replace(Edad,empleados);
+                    }
+                    else{
+                        ArrayList<Empleado>empleados=App.edades.get(Edad);
+                        empleados.add(nuevoEmpleado);
+                        App.edades.replace(Edad,empleados);
+                    }
+                    if(!App.NombreEmpleado.containsKey(Nombre)){
+                        App.NombreEmpleado.put(Nombre,new ArrayList<>());
+                        ArrayList<Empleado>empleados2=App.NombreEmpleado.get(Nombre);
+                        empleados2.add(nuevoEmpleado);
+                        App.NombreEmpleado.replace(Nombre,empleados2);
+                    }
+                    else{
+                        ArrayList<Empleado>empleados2=App.NombreEmpleado.get(Nombre);
+                        empleados2.add(nuevoEmpleado);
+                        App.NombreEmpleado.replace(Nombre,empleados2);
+                    }
                 }
             }}
         else if(Cliente.isSelected()&&Crear.isSelected()){
@@ -1243,7 +1311,30 @@ public class MenuAdministracion {
                     ErrorCrear.setText("");
                     ErrorVer.setText("");
                 }
+                    if(!App.Dinero.containsKey(Dinero)){
+                        App.Dinero.put(Dinero,new ArrayList<>());
+                        ArrayList<Cliente>clientes=App.Dinero.get(Dinero);
+                        clientes.add(nuevoCliente);
+                        App.Dinero.replace(Dinero,clientes);
+                    }
+                    else{
+                        ArrayList<Cliente>clientes=App.Dinero.get(Dinero);
+                        clientes.add(nuevoCliente);
+                        App.Dinero.replace(Dinero,clientes);
+                    }
+                    if(!App.NombreClientes.containsKey(Nombre)){
+                        App.NombreClientes.put(Nombre,new ArrayList<>());
+                        ArrayList<Cliente>clientes2=App.NombreClientes.get(Nombre);
+                        clientes2.add(nuevoCliente);
+                        App.NombreClientes.replace(Nombre,clientes2);
+                    }
+                    else{
+                        ArrayList<Cliente>clientes2=App.NombreClientes.get(Nombre);
+                        clientes2.add(nuevoCliente);
+                        App.NombreClientes.replace(Nombre,clientes2);
+                    }
             }
+
         }
     }}
     @FXML
@@ -1341,6 +1432,56 @@ public class MenuAdministracion {
                         }
                         App.areas.remove(nombre);
                         App.areas.put(Nombre,areaAux);
+                        int ingresosActual= areaActual.ingresoArea;
+                        if(ingresos==ingresosActual){
+                            ArrayList<Area> Areas=App.ingresos.get(ingresos);
+                            Areas.remove(areaActual);
+                            Areas.add(areaAux);
+                            App.ingresos.replace(ingresos,Areas);
+                        }
+                        else{
+                            ArrayList<Area> Areas=App.ingresos.get(ingresosActual);
+                            Areas.remove(areaActual);
+                            App.ingresos.replace(ingresosActual,Areas);
+                            if(!App.ingresos.containsKey(ingresos)){
+                                App.ingresos.put(ingresos,new ArrayList<>());
+                                ArrayList<Area>Areas2=App.ingresos.get(ingresos);
+                                Areas2.add(areaAux);
+                                App.ingresos.replace(ingresos,Areas2);
+                            }
+                            else{
+                                ArrayList<Area>Areas2=App.ingresos.get(ingresos);
+                                Areas2.add(areaAux);
+                                App.ingresos.replace(ingresos,Areas2);
+                            }
+
+                        }
+                        String gerenteActual= areaActual.Gerente;
+                        if(gerenteActual.equals(Gerente)){
+                            ArrayList<Area> Areas=App.Gerentes.get(gerenteActual);
+                            Areas.remove(areaActual);
+                            Areas.add(areaAux);
+                            App.Gerentes.replace(gerenteActual,Areas);
+                        }
+                        else{
+                            ArrayList<Area> Areas=App.Gerentes.get(gerenteActual);
+                            Areas.remove(areaActual);
+                            App.ingresos.replace(ingresosActual,Areas);
+                            if(!App.Gerentes.containsKey(Gerente)){
+                                App.Gerentes.put(Gerente,new ArrayList<>());
+                                ArrayList<Area>Areas2=App.Gerentes.get(Gerente);
+                                Areas2.add(areaAux);
+                                App.Gerentes.replace(Gerente,Areas2);
+                            }
+                            else{
+                                ArrayList<Area>Areas2=App.Gerentes.get(Gerente);
+                                Areas2.add(areaAux);
+                                App.Gerentes.replace(Gerente,Areas2);
+                            }
+                        }
+
+
+
                         ErrorEditar.setText("");
                         Informacion.setText("Edicion satifactoria");
                     }
@@ -1442,6 +1583,52 @@ public class MenuAdministracion {
                         }
                         App.empleados.remove(empleado);
                         App.empleados.put(cedula,empleadoAux);
+                        int EdadActual= empleadoActual.edad;
+                        if(EdadActual==edad){
+                            ArrayList<Empleado> empleados=App.edades.get(edad);
+                            empleados.remove(empleadoActual);
+                            empleados.add(empleadoAux);
+                            App.edades.replace(edad,empleados);
+                        }
+                        else{
+                            ArrayList<Empleado> empleados=App.edades.get(EdadActual);
+                            empleados.remove(empleadoActual);
+                            App.edades.replace(EdadActual,empleados);
+                            if(!App.edades.containsKey(edad)){
+                                App.edades.put(edad,new ArrayList<>());
+                                ArrayList<Empleado>empleados2=App.edades.get(edad);
+                                empleados2.add(empleadoAux);
+                                App.edades.replace(edad,empleados2);
+                            }
+                            else{
+                                ArrayList<Empleado>empleados2=App.edades.get(edad);
+                                empleados2.add(empleadoAux);
+                                App.edades.replace(edad,empleados2);
+                            }
+
+                        }
+                        String NombreActual= empleadoActual.nombre;
+                        if(NombreActual.equals(Nombre)){
+                            ArrayList<Empleado> empleados=App.NombreEmpleado.get(Nombre);
+                            empleados.remove(empleadoActual);
+                            empleados.add(empleadoAux);
+                            App.NombreEmpleado.replace(Nombre,empleados);
+                        }
+                        else {
+                            ArrayList<Empleado> empleados = App.NombreEmpleado.get(NombreActual);
+                            empleados.remove(empleadoActual);
+                            App.NombreEmpleado.replace(NombreActual, empleados);
+                            if (!App.NombreEmpleado.containsKey(Nombre)) {
+                                App.NombreEmpleado.put(Nombre, new ArrayList<>());
+                                ArrayList<Empleado> empleados2 = App.NombreEmpleado.get(Nombre);
+                                empleados2.add(empleadoAux);
+                                App.NombreEmpleado.replace(Nombre, empleados2);
+                            } else {
+                                ArrayList<Empleado> empleados2 = App.NombreEmpleado.get(Nombre);
+                                empleados2.add(empleadoAux);
+                                App.NombreEmpleado.replace(Nombre, empleados2);
+                            }
+                        }
                         ErrorEditar.setText("");
                         Informacion.setText("Edicion satifactoria");
                     }
@@ -1541,6 +1728,52 @@ public class MenuAdministracion {
                         }
                         App.clientes.remove(cliente);
                         App.clientes.put(cedula,clienteAux);
+                        int DineroActual= clienteActual.dinero;
+                        if(DineroActual==dinero){
+                            ArrayList<Cliente> clientes=App.Dinero.get(dinero);
+                            clientes.remove(clienteActual);
+                            clientes.add(clienteAux);
+                            App.Dinero.replace(dinero,clientes);
+                        }
+                        else{
+                            ArrayList<Cliente> clientes=App.Dinero.get(DineroActual);
+                            clientes.remove(clienteActual);
+                            App.Dinero.replace(DineroActual,clientes);
+                            if(!App.Dinero.containsKey(dinero)){
+                                App.Dinero.put(dinero,new ArrayList<>());
+                                ArrayList<Cliente>clientes2=App.Dinero.get(dinero);
+                                clientes2.add(clienteAux);
+                                App.Dinero.replace(dinero,clientes2);
+                            }
+                            else{
+                                ArrayList<Cliente>clientes2=App.Dinero.get(dinero);
+                                clientes2.add(clienteAux);
+                                App.Dinero.replace(dinero,clientes2);
+                            }
+
+                        }
+                        String NombreActual= clienteActual.nombre;
+                        if(NombreActual.equals(Nombre)){
+                            ArrayList<Cliente> clientes=App.NombreClientes.get(Nombre);
+                            clientes.remove(clienteActual);
+                            clientes.add(clienteAux);
+                            App.NombreClientes.replace(Nombre,clientes);
+                        }
+                        else {
+                            ArrayList<Cliente> clientes = App.NombreClientes.get(NombreActual);
+                            clientes.remove(clienteActual);
+                            App.NombreClientes.replace(NombreActual, clientes);
+                            if (!App.NombreClientes.containsKey(Nombre)) {
+                                App.NombreClientes.put(Nombre, new ArrayList<>());
+                                ArrayList<Cliente> clientes2 = App.NombreClientes.get(Nombre);
+                                clientes2.add(clienteAux);
+                                App.NombreClientes.replace(Nombre, clientes2);
+                            } else {
+                                ArrayList<Cliente> clientes2 = App.NombreClientes.get(Nombre);
+                                clientes2.add(clienteAux);
+                                App.NombreClientes.replace(Nombre, clientes2);
+                            }
+                        }
                         ErrorEditar.setText("");
                         Informacion.setText("Edicion satifactoria");
                     }

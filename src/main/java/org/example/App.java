@@ -12,6 +12,7 @@ import org.jgrapht.graph.SimpleGraph;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.TreeMap;
 
 /**
  * JavaFX App
@@ -22,6 +23,13 @@ public class App extends Application {
     public static Hashtable<String,Area>areas=new Hashtable<>();
     public static Hashtable<Integer,Empleado>empleados=new Hashtable<>();
     public static Hashtable<Integer, Cliente>clientes=new Hashtable<>();
+    public static TreeMap<Integer, ArrayList<Area>> ingresos=new TreeMap<>();
+    public static TreeMap<String,ArrayList<Area>> Gerentes= new TreeMap<>();
+    public static TreeMap<Integer,ArrayList<Empleado>>edades=new TreeMap<>();
+    public static TreeMap<String,ArrayList<Empleado>>NombreEmpleado=new TreeMap<>();
+    public static TreeMap<Integer,ArrayList<Cliente>> Dinero=new TreeMap<>();
+    public static TreeMap<String,ArrayList<Cliente>>NombreClientes=new TreeMap<>();
+
     private static Scene scene;
 
     @Override
