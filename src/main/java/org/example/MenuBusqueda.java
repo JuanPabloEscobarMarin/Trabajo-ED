@@ -126,7 +126,9 @@ public class MenuBusqueda {
                             Consola.setHeaderText("No se encuentran resultados!");
                             Consola.setContentText("");
                         }
-                    }
+                    } else {
+                    ErrorcaracterABuscar.setText("Ingrese un valor");
+                }
                 }
             if (Atributo2.isSelected()) {
                 //Ingresos
@@ -197,6 +199,8 @@ public class MenuBusqueda {
                     } catch (NumberFormatException nfe) {
                         ErrorcaracterABuscar.setText("Valor invalido!");
                     }
+                } else {
+                    ErrorcaracterABuscar.setText("Ingrese un valor");
                 }
             }
             if (Atributo3.isSelected()){
@@ -250,6 +254,8 @@ public class MenuBusqueda {
                     } catch (NumberFormatException nfe) {
                         ErrorcaracterABuscar.setText("Valor invalido!");
                     }
+                } else {
+                    ErrorcaracterABuscar.setText("Ingrese un valor");
                 }
             }
             if (Atributo3.isSelected()){
