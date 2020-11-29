@@ -8,7 +8,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.util.Hashtable;
 import java.util.TreeMap;
 
 public class MenuBusqueda {
@@ -51,9 +50,9 @@ public class MenuBusqueda {
         if (Area.isSelected()) {
             Empleado.setSelected(false);
             Cliente.setSelected(false);
-            Atributo1.setText("ID");
+            Atributo1.setText("Nombre");
             Atributo2.setText("Ingresos");
-            Atributo3.setText("Nombre");
+            Atributo3.setText("Gerente");
         }
     }
 
@@ -119,33 +118,17 @@ public class MenuBusqueda {
 
         if (Area.isSelected()) {
             if (Atributo1.isSelected()) {
-                //ID
+                //Nombre
                 if (!caracterABuscar.getText().equals("")) {
-                    int count = 1;
-                    Hashtable<Integer, Area> ID = new Hashtable<>();
-                    for (Area areas : App.areas.values()) {
-                        ID.put(count, areas);
-                        count++;
-                    }
-                    //Arreglar generador de ID que es aleatorio y mostrar el ID de cada Area creada
-                    //Quitar ingresar Ingresos en administracion
-                    try {
-                        if (ID.containsKey(Integer.valueOf(caracterABuscar.getText()))) {
+                        if (App.areas.containsKey(String.valueOf(caracterABuscar.getText()))) {
                             Consola.setHeaderText("Resultados: ");
-                            Consola.setContentText(String.valueOf(ID.get(Integer.valueOf(caracterABuscar.getText()))));
+                            Consola.setContentText(String.valueOf(App.areas.get(String.valueOf(caracterABuscar.getText()))));
                         } else {
                             Consola.setHeaderText("No se encuentran resultados!");
                             Consola.setContentText("");
                         }
-                    } catch (NumberFormatException nfe) {
-                        Consola.setHeaderText("Valor invalido!");
                     }
-                    ID.clear();
-                } else {
-                    ErrorcaracterABuscar.setText("Ingrese un valor valido");
                 }
-
-            }
             if (Atributo2.isSelected()) {
                 //Ingresos
                 if (!caracterABuscar.getText().equals("")) {
@@ -173,25 +156,24 @@ public class MenuBusqueda {
                 }
             }
             if (Atributo3.isSelected()) {
-                //Nombre
+                //Gerente
                 if (!caracterABuscar.getText().equals("")) {
-                    TreeMap<String, Area> nombres = new TreeMap<>();
-                    //Quitar el for ya que el Nombre es único
-                    int count = 1;
+                    TreeMap<String, Area> gerentes = new TreeMap<>();
+                    StringBuilder plus = new StringBuilder("#");
                     for (Area areas : App.areas.values()) {
-                        if (areas.nombreDelArea.equals(String.valueOf(caracterABuscar.getText()))) {
-                            if (nombres.containsKey(areas.nombreDelArea)) {
-                                nombres.put(areas.nombreDelArea + count, areas);
-                                count++;
+                        if (areas.Gerente.equals(String.valueOf(caracterABuscar.getText()))) {
+                            if (gerentes.containsKey(String.valueOf(areas.Gerente))) {
+                                gerentes.put(areas.Gerente + plus, areas);
+                                plus.append("#");
                             } else {
-                                nombres.put(areas.nombreDelArea, areas);
+                                gerentes.put(areas.Gerente, areas);
                             }
                         }
                     }
-                    if (nombres.size() == 0) {
+                    if (gerentes.size() == 0) {
                         Consola.setContentText("No se encontraron resultados");
                     } else {
-                        Consola.setContentText(String.valueOf(nombres.values()));
+                        Consola.setContentText(String.valueOf(gerentes.values()));
                     }
                 }
             }
