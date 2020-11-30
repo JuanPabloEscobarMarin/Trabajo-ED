@@ -557,111 +557,116 @@ public class MenuAdministracion {
         else if(!Crear.isSelected()&&!Editar.isSelected()&&!Ver.isSelected()&&!Eliminar.isSelected()){
             ErrorOpcion.setText("Seleccione una opcion");
         }
-        else if(Area.isSelected()&&Ver.isSelected()){
-            Texto.setVisible(true);
-            BotonVer.setVisible(true);
-            IngresarTexto.setText("Ingrese el nombre de la area");
+        else if(Area.isSelected()){
+            if (Ver.isSelected()){
+                Texto.setVisible(true);
+                BotonVer.setVisible(true);
+                IngresarTexto.setText("Ingrese el nombre de la area");
+            }
+            if (Eliminar.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                BotonEliminar.setVisible(true);
+                IngresarTexto.setText("Ingrese el nombre de la area");
+            }
+            if (Crear.isSelected()){
+                Texto1.setVisible(true);
+                Texto2.setVisible(true);
+                Texto3.setVisible(true);
+                Texto4.setVisible(true);
+                BotonCrear.setVisible(true);
+                Atributo1.setText("Nombre");
+                Atributo2.setText("Gerente");
+                Atributo3.setText("Ingresos");
+                Atributo4.setText("Gastos");
+                Texto1.setText("");
+                Texto2.setText("");
+                Texto3.setText("");
+                Texto4.setText("");
+            }
+            if(Editar.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                IngresarTexto.setText("Ingrese el nombre del area");
+                BotonBuscar.setVisible(true);
+            }
         }
-        else if(Area.isSelected()&&Eliminar.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            BotonEliminar.setVisible(true);
-            IngresarTexto.setText("Ingrese el nombre de la area");
+        else if(Empleado.isSelected()){
+            if (Ver.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                BotonVer.setVisible(true);
+                IngresarTexto.setText("Ingrese la cedula del empleado");
+            }
+            if (Eliminar.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                BotonEliminar.setVisible(true);
+                IngresarTexto.setText("Ingrese la cedula del empelado");
+            }
+            if(Crear.isSelected()){
+                Texto1.setVisible(true);
+                Texto2.setVisible(true);
+                Texto3.setVisible(true);
+                Texto4.setVisible(true);
+                BotonCrear.setVisible(true);
+                Atributo1.setText("Nombre");
+                Atributo2.setText("Cedula");
+                Atributo3.setText("Edad");
+                Atributo4.setText("Salario");
+                Relacion1.setText("Tiene Area");
+                Si1.setVisible(true);
+                No1.setVisible(true);
+                Si1.setSelected(false);
+                No1.setSelected(false);
+                Texto1.setText("");
+                Texto2.setText("");
+                Texto3.setText("");
+                Texto4.setText("");
+            }
+            if(Editar.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                IngresarTexto.setText("Ingrese la cedula del empleado");
+                BotonBuscar.setVisible(true);
+            }
         }
-        else if(Empleado.isSelected()&&Ver.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            BotonVer.setVisible(true);
-            IngresarTexto.setText("Ingrese la cedula del empleado");
-        }
-        else if(Empleado.isSelected()&&Eliminar.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            BotonEliminar.setVisible(true);
-            IngresarTexto.setText("Ingrese la cedula del empelado");
-        }
-        else if(Cliente.isSelected()&&Ver.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            BotonVer.setVisible(true);
-            IngresarTexto.setText("Ingrese la cedula del Cliente");
-        }
-        else if(Cliente.isSelected()&&Eliminar.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            BotonEliminar.setVisible(true);
-            IngresarTexto.setText("Ingrese la cedula del cliente");
-        }
-        else if(Area.isSelected()&&Crear.isSelected()){
-            Texto1.setVisible(true);
-            Texto2.setVisible(true);
-            Texto3.setVisible(true);
-            Texto4.setVisible(true);
-            BotonCrear.setVisible(true);
-            Atributo1.setText("Nombre");
-            Atributo2.setText("Gerente");
-            Atributo3.setText("Ingresos");
-            Atributo4.setText("Gastos");
-            Texto1.setText("");
-            Texto2.setText("");
-            Texto3.setText("");
-            Texto4.setText("");
-        }
-        else if(Empleado.isSelected()&&Crear.isSelected()){
-            Texto1.setVisible(true);
-            Texto2.setVisible(true);
-            Texto3.setVisible(true);
-            Texto4.setVisible(true);
-            BotonCrear.setVisible(true);
-            Atributo1.setText("Nombre");
-            Atributo2.setText("Cedula");
-            Atributo3.setText("Edad");
-            Atributo4.setText("Salario");
-            Relacion1.setText("Tiene Area");
-            Si1.setVisible(true);
-            No1.setVisible(true);
-            Si1.setSelected(false);
-            No1.setSelected(false);
-            Texto1.setText("");
-            Texto2.setText("");
-            Texto3.setText("");
-            Texto4.setText("");
-        }
-        else if(Cliente.isSelected()&&Crear.isSelected()){
-            Texto1.setVisible(true);
-            Texto2.setVisible(true);
-            Texto3.setVisible(true);
-            BotonCrear.setVisible(true);
-            Atributo1.setText("Nombre");
-            Atributo2.setText("Cedula");
-            Atributo3.setText("Dinero");
-            Relacion1.setText("Tiene Area");
-            Si1.setVisible(true);
-            No1.setVisible(true);
-            Si1.setSelected(false);
-            No1.setSelected(false);
-            Texto1.setText("");
-            Texto2.setText("");
-            Texto3.setText("");
-
-        }
-        else if(Area.isSelected()&&Editar.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            IngresarTexto.setText("Ingrese el nombre del area");
-            BotonBuscar.setVisible(true);
-        }
-        else if(Empleado.isSelected()&&Editar.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            IngresarTexto.setText("Ingrese la cedula del empleado");
-            BotonBuscar.setVisible(true);
-        }
-        else if(Cliente.isSelected()&&Editar.isSelected()){
-            Texto.setVisible(true);
-            Texto.setText("");
-            IngresarTexto.setText("Ingrese la cedula del cliente");
-            BotonBuscar.setVisible(true);
+        else if(Cliente.isSelected()){
+            if (Ver.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                BotonVer.setVisible(true);
+                IngresarTexto.setText("Ingrese la cedula del Cliente");
+            }
+            if (Eliminar.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                BotonEliminar.setVisible(true);
+                IngresarTexto.setText("Ingrese la cedula del cliente");
+            }
+            if(Crear.isSelected()){
+                Texto1.setVisible(true);
+                Texto2.setVisible(true);
+                Texto3.setVisible(true);
+                BotonCrear.setVisible(true);
+                Atributo1.setText("Nombre");
+                Atributo2.setText("Cedula");
+                Atributo3.setText("Dinero");
+                Relacion1.setText("Tiene Area");
+                Si1.setVisible(true);
+                No1.setVisible(true);
+                Si1.setSelected(false);
+                No1.setSelected(false);
+                Texto1.setText("");
+                Texto2.setText("");
+                Texto3.setText("");
+            }
+            if(Editar.isSelected()){
+                Texto.setVisible(true);
+                Texto.setText("");
+                IngresarTexto.setText("Ingrese la cedula del cliente");
+                BotonBuscar.setVisible(true);
+            }
         }
     }
     @FXML
@@ -669,7 +674,7 @@ public class MenuAdministracion {
         if(Area.isSelected()&&Editar.isSelected()){
             String area=Texto.getText().toLowerCase();
             if(!App.areas.containsKey(area)){
-                ErrorEditar.setText("No se encuentra area registrada");
+                ErrorText.setText("Area no encontrada");
             }
             else {
                 Atributos.setVisible(true);
@@ -681,32 +686,42 @@ public class MenuAdministracion {
             }
         }
         else if(Empleado.isSelected()&&Editar.isSelected()){
-            int empleado=Integer.parseInt(Texto.getText());
-            if(!App.empleados.containsKey(empleado)){
-                ErrorEditar.setText("No se encuentra empleado registrado");
+            try {
+                int empleado=Integer.parseInt(Texto.getText());
+                if(!App.empleados.containsKey(empleado)){
+                    ErrorText.setText("No se encuentra empleado registrado");
+                }
+                else {
+                    Atributos.setVisible(true);
+                    Relaciones.setVisible(true);
+                    Atributos.setSelected(false);
+                    Relaciones.setSelected(false);
+                    BotonBuscar.setVisible(false);
+                    BotonEditar.setVisible(true);
+                }
+            } catch (NumberFormatException nfe){
+                ErrorText.setText("Valor invalido");
             }
-            else {
-                Atributos.setVisible(true);
-                Relaciones.setVisible(true);
-                Atributos.setSelected(false);
-                Relaciones.setSelected(false);
-                BotonBuscar.setVisible(false);
-                BotonEditar.setVisible(true);
-            }
+
         }
         if(Cliente.isSelected()&&Editar.isSelected()){
             int cliente=Integer.parseInt(Texto.getText());
-            if(!App.clientes.containsKey(cliente)){
-                ErrorEditar.setText("No se encuentra cliente registrado");
+            try {
+                if(!App.clientes.containsKey(cliente)){
+                    ErrorEditar.setText("No se encuentra cliente registrado");
+                }
+                else {
+                    Atributos.setVisible(true);
+                    Relaciones.setVisible(true);
+                    Atributos.setSelected(false);
+                    Relaciones.setSelected(false);
+                    BotonBuscar.setVisible(false);
+                    BotonEditar.setVisible(true);
+                }
+            } catch (NumberFormatException nfe){
+                ErrorText.setText("Valor invalido");
             }
-            else {
-                Atributos.setVisible(true);
-                Relaciones.setVisible(true);
-                Atributos.setSelected(false);
-                Relaciones.setSelected(false);
-                BotonBuscar.setVisible(false);
-                BotonEditar.setVisible(true);
-            }
+
         }
     }
     @FXML
@@ -780,8 +795,6 @@ public class MenuAdministracion {
                 BoxRelacion2.setText("Unir Cliente");
                 BoxRelacion22.setVisible(true);
                 BoxRelacion22.setText("Eliminar Cliente");
-
-
             }
             else if(Empleado.isSelected()){
                 BoxRelacion1.setVisible(true);
@@ -826,17 +839,13 @@ public class MenuAdministracion {
     @FXML
     private void ActionRelacion1(ActionEvent actionEvent)throws IOException{
         if(BoxRelacion1.isSelected()){
+            BoxRelacion2.setSelected(false);
             if(Area.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
                 TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Cedula");
             }
-            else if(Empleado.isSelected()){
-                TextoRelacionEditar1.setVisible(true);
-                TextoRelacionEditar1.setText("");
-                RelacionEditar1.setText("Nombre");
-            }
-            else if(Cliente.isSelected()){
+            else if(Empleado.isSelected() || Cliente.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
                 TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Nombre");
@@ -850,17 +859,8 @@ public class MenuAdministracion {
     @FXML
     private void ActionRelacion2(ActionEvent actionEvent)throws IOException{
         if(BoxRelacion2.isSelected()){
-            if(Area.isSelected()){
-                TextoRelacionEditar2.setVisible(true);
-                TextoRelacionEditar2.setText("");
-                RelacionEditar2.setText("Cedula");
-            }
-            else if(Empleado.isSelected()){
-                TextoRelacionEditar2.setVisible(true);
-                TextoRelacionEditar2.setText("");
-                RelacionEditar2.setText("Cedula");
-            }
-            else if(Cliente.isSelected()){
+            BoxRelacion1.setSelected(false);
+            if(Area.isSelected() || Empleado.isSelected() || Cliente.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
                 TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
@@ -879,12 +879,7 @@ public class MenuAdministracion {
                 TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Cedula");
             }
-            else if(Empleado.isSelected()){
-                TextoRelacionEditar1.setVisible(true);
-                TextoRelacionEditar1.setText("");
-                RelacionEditar1.setText("Nombre");
-            }
-            else if(Cliente.isSelected()){
+            else if(Empleado.isSelected() || Cliente.isSelected()){
                 TextoRelacionEditar1.setVisible(true);
                 TextoRelacionEditar1.setText("");
                 RelacionEditar1.setText("Nombre");
@@ -898,17 +893,7 @@ public class MenuAdministracion {
     @FXML
     private void ActionRelacion22(ActionEvent actionEvent)throws IOException{
         if(BoxRelacion22.isSelected()){
-            if(Area.isSelected()){
-                TextoRelacionEditar2.setVisible(true);
-                TextoRelacionEditar2.setText("");
-                RelacionEditar2.setText("Cedula");
-            }
-            else if(Empleado.isSelected()){
-                TextoRelacionEditar2.setVisible(true);
-                TextoRelacionEditar2.setText("");
-                RelacionEditar2.setText("Cedula");
-            }
-            else if(Cliente.isSelected()){
+            if(Area.isSelected() || Empleado.isSelected() || Cliente.isSelected()){
                 TextoRelacionEditar2.setVisible(true);
                 TextoRelacionEditar2.setText("");
                 RelacionEditar2.setText("Cedula");
@@ -943,8 +928,7 @@ public class MenuAdministracion {
 
         if(Texto.getText().equals("")){
             ErrorText.setText("Ingrese un valor");
-        }
-        else if(Area.isSelected()&&Ver.isSelected()){
+        } else if(Area.isSelected()&&Ver.isSelected()){
             String area = Texto.getText().toLowerCase();
             if(!App.areas.containsKey(area)){
                 ErrorVer.setText("No se encuentra un area con este nombre");
@@ -1069,7 +1053,9 @@ public class MenuAdministracion {
     @FXML
     private void ActionCrear(ActionEvent actionEvent)throws IOException{
         ErrorCrear.setText("");
-
+        if(Texto1.getText().equals("")||Texto2.getText().equals("")||Texto3.getText().equals("")||Texto4.getText().equals("")){
+            ErrorCrear.setText("Falta atributo(s)");
+        }
         if(Area.isSelected()&&Crear.isSelected()){
             if(Texto1.getText().equals("")||Texto2.getText().equals("")||Texto3.getText().equals("")||Texto4.getText().equals("")){
                 ErrorCrear.setText("Falta atributo(s)");
@@ -1159,56 +1145,33 @@ public class MenuAdministracion {
                             ErrorCrear.setText("");
                             Informacion.setText("Empleado creado con relacion");
                         }
-                        Area.setSelected(false);
-                        Cliente.setSelected(false);
-                        Texto.setVisible(false);
-                        BotonVer.setVisible(false);
-                        IngresarTexto.setText("");
-                        BotonEliminar.setVisible(false);
-                        Texto1.setVisible(false);
-                        Texto2.setVisible(false);
-                        Texto3.setVisible(false);
-                        Texto4.setVisible(false);
-                        RelacionTexto1.setVisible(false);
-                        Si1.setVisible(false);
-                        No1.setVisible(false);
-                        BotonCrear.setVisible(false);
-                        Atributo1.setText("");
-                        Atributo2.setText("");
-                        Atributo3.setText("");
-                        Atributo4.setText("");
-                        Relacion1.setText("");
-                        LabelRelacion1.setText("");
-                        LabelRelacion1.setText("");
-                        ErrorCrear.setText("");
-                        ErrorVer.setText("");
                     } else if (No1.isSelected()) {
                         ErrorCrear.setText("");
                         Informacion.setText("Empleado creado sin relacion");
-                        Area.setSelected(false);
-                        Cliente.setSelected(false);
-                        Texto.setVisible(false);
-                        BotonVer.setVisible(false);
-                        IngresarTexto.setText("");
-                        BotonEliminar.setVisible(false);
-                        Texto1.setVisible(false);
-                        Texto2.setVisible(false);
-                        Texto3.setVisible(false);
-                        Texto4.setVisible(false);
-                        RelacionTexto1.setVisible(false);
-                        Si1.setVisible(false);
-                        No1.setVisible(false);
-                        BotonCrear.setVisible(false);
-                        Atributo1.setText("");
-                        Atributo2.setText("");
-                        Atributo3.setText("");
-                        Atributo4.setText("");
-                        Relacion1.setText("");
-                        LabelRelacion1.setText("");
-                        LabelRelacion1.setText("");
-                        ErrorCrear.setText("");
-                        ErrorVer.setText("");
                     }
+                    Area.setSelected(false);
+                    Cliente.setSelected(false);
+                    Texto.setVisible(false);
+                    BotonVer.setVisible(false);
+                    IngresarTexto.setText("");
+                    BotonEliminar.setVisible(false);
+                    Texto1.setVisible(false);
+                    Texto2.setVisible(false);
+                    Texto3.setVisible(false);
+                    Texto4.setVisible(false);
+                    RelacionTexto1.setVisible(false);
+                    Si1.setVisible(false);
+                    No1.setVisible(false);
+                    BotonCrear.setVisible(false);
+                    Atributo1.setText("");
+                    Atributo2.setText("");
+                    Atributo3.setText("");
+                    Atributo4.setText("");
+                    Relacion1.setText("");
+                    LabelRelacion1.setText("");
+                    LabelRelacion1.setText("");
+                    ErrorCrear.setText("");
+                    ErrorVer.setText("");
                     if(!App.edades.containsKey(Edad)){
                         App.edades.put(Edad,new ArrayList<>());
                         ArrayList<Empleado>empleados=App.edades.get(Edad);
@@ -1231,8 +1194,30 @@ public class MenuAdministracion {
                         empleados2.add(nuevoEmpleado);
                         App.NombreEmpleado.replace(Nombre,empleados2);
                     }
+                    Informacion.setText("Empleado creado con exito");
+                    Texto.setVisible(false);
+                    BotonVer.setVisible(false);
+                    IngresarTexto.setText("");
+                    BotonEliminar.setVisible(false);
+                    Texto1.setVisible(false);
+                    Texto2.setVisible(false);
+                    Texto3.setVisible(false);
+                    Texto4.setVisible(false);
+                    RelacionTexto1.setVisible(false);
+                    Si1.setVisible(false);
+                    No1.setVisible(false);
+                    BotonCrear.setVisible(false);
+                    Atributo1.setText("");
+                    Atributo2.setText("");
+                    Atributo3.setText("");
+                    Atributo4.setText("");
+                    Relacion1.setText("");
+                    LabelRelacion1.setText("");
+                    LabelRelacion1.setText("");
+                    ErrorCrear.setText("");
+                    ErrorVer.setText("");}
                 }
-            }}
+            }
         else if(Cliente.isSelected()&&Crear.isSelected()){
             if(Texto1.getText().equals("")||Texto2.getText().equals("")||Texto3.getText().equals("")){
                 ErrorCrear.setText("Falta atributo(s)");
@@ -1260,33 +1245,11 @@ public class MenuAdministracion {
                         ErrorCrear.setText("");
                         Informacion.setText("Cliente creado con relacion");
                     }
-                    Area.setSelected(false);
-                    Cliente.setSelected(false);
-                    Texto.setVisible(false);
-                    BotonVer.setVisible(false);
-                    IngresarTexto.setText("");
-                    BotonEliminar.setVisible(false);
-                    Texto1.setVisible(false);
-                    Texto2.setVisible(false);
-                    Texto3.setVisible(false);
-                    Texto4.setVisible(false);
-                    RelacionTexto1.setVisible(false);
-                    Si1.setVisible(false);
-                    No1.setVisible(false);
-                    BotonCrear.setVisible(false);
-                    Atributo1.setText("");
-                    Atributo2.setText("");
-                    Atributo3.setText("");
-                    Atributo4.setText("");
-                    Relacion1.setText("");
-                    LabelRelacion1.setText("");
-                    LabelRelacion1.setText("");
-                    ErrorCrear.setText("");
-                    ErrorVer.setText("");
                 }
                 else if(No1.isSelected()){
                     ErrorCrear.setText("");
                     Informacion.setText("Cliente creado sin relacion");
+                }
                     Area.setSelected(false);
                     Cliente.setSelected(false);
                     Texto.setVisible(false);
@@ -1310,7 +1273,6 @@ public class MenuAdministracion {
                     LabelRelacion1.setText("");
                     ErrorCrear.setText("");
                     ErrorVer.setText("");
-                }
                     if(!App.Dinero.containsKey(Dinero)){
                         App.Dinero.put(Dinero,new ArrayList<>());
                         ArrayList<Cliente>clientes=App.Dinero.get(Dinero);
@@ -1333,10 +1295,31 @@ public class MenuAdministracion {
                         clientes2.add(nuevoCliente);
                         App.NombreClientes.replace(Nombre,clientes2);
                     }
+                    Informacion.setText("Cliente creado con exito");
+                    Texto.setVisible(false);
+                    BotonVer.setVisible(false);
+                    IngresarTexto.setText("");
+                    BotonEliminar.setVisible(false);
+                    Texto1.setVisible(false);
+                    Texto2.setVisible(false);
+                    Texto3.setVisible(false);
+                    Texto4.setVisible(false);
+                    RelacionTexto1.setVisible(false);
+                    Si1.setVisible(false);
+                    No1.setVisible(false);
+                    BotonCrear.setVisible(false);
+                    Atributo1.setText("");
+                    Atributo2.setText("");
+                    Atributo3.setText("");
+                    Atributo4.setText("");
+                    Relacion1.setText("");
+                    LabelRelacion1.setText("");
+                    LabelRelacion1.setText("");
+                    ErrorCrear.setText("");
+                    ErrorVer.setText("");}
             }
-
         }
-    }}
+    }
     @FXML
     private void ActionEditar(ActionEvent editar)throws IOException{
         ErrorEditar.setText("");
@@ -1479,17 +1462,12 @@ public class MenuAdministracion {
                                 App.Gerentes.replace(Gerente,Areas2);
                             }
                         }
-
-
-
                         ErrorEditar.setText("");
                         Informacion.setText("Edicion satifactoria");
                     }
                 }
             }
-
         }
-
 
         else if(Empleado.isSelected()){
             int empleado=Integer.parseInt(Texto.getText());
@@ -1504,7 +1482,6 @@ public class MenuAdministracion {
                             ErrorEditar.setText("Espacio de area vacio");
                         } else {
                             String nombre=TextoRelacionEditar1.getText().toLowerCase();
-
                             if (!App.areas.containsKey(nombre)) {
                                 ErrorEditar.setText("No se encuentra area registrada");
                             } else {
@@ -1605,7 +1582,6 @@ public class MenuAdministracion {
                                 empleados2.add(empleadoAux);
                                 App.edades.replace(edad,empleados2);
                             }
-
                         }
                         String NombreActual= empleadoActual.nombre;
                         if(NombreActual.equals(Nombre)){
@@ -1634,9 +1610,7 @@ public class MenuAdministracion {
                     }
                 }
             }
-
         }
-
         else if(Cliente.isSelected()){
             int cliente=Integer.parseInt(Texto.getText());
             if(!App.clientes.containsKey(cliente)){
@@ -1650,7 +1624,6 @@ public class MenuAdministracion {
                             ErrorEditar.setText("Espacio de Area vacio");
                         } else {
                             String nombre=TextoRelacionEditar1.getText().toLowerCase();
-
                             if (!App.areas.containsKey(nombre)) {
                                 ErrorEditar.setText("No se encuentra area registrada");
                             } else {

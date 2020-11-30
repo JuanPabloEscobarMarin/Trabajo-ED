@@ -1,76 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.MenuAdministracion">
    <children>
-      <Label layoutX="132.0" layoutY="21.0" text="Bienvenido al sistema de administracion">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="Area" layoutX="171.0" layoutY="77.0" mnemonicParsing="false" onAction="#SeleccionarArea" text="Area" />
-      <CheckBox fx:id="Empleado" layoutX="263.0" layoutY="77.0" mnemonicParsing="false" onAction="#SeleccionarEmpleado" text="Empleado" />
-      <CheckBox fx:id="Cliente" layoutX="374.0" layoutY="77.0" mnemonicParsing="false" onAction="#SeleccionarCliente" text="Cliente" />
-      <Label layoutX="41.0" layoutY="77.0" text="Seleccione un clase" />
-      <Label layoutX="33.0" layoutY="120.0" text="Seleccione una opcion" />
-      <CheckBox fx:id="Crear" layoutX="169.0" layoutY="120.0" mnemonicParsing="false" onAction="#SeleccionarCrear" text="Crear" />
-      <CheckBox fx:id="Editar" layoutX="234.0" layoutY="120.0" mnemonicParsing="false" onAction="#SeleccionarEditar" text="Editar" />
-      <CheckBox fx:id="Ver" layoutX="300.0" layoutY="120.0" mnemonicParsing="false" onAction="#SeleccionarVer" text="Ver" />
-      <CheckBox fx:id="Eliminar" layoutX="368.0" layoutY="120.0" mnemonicParsing="false" onAction="#SeleccionarEliminar" text="Eliminar" />
-      <Label fx:id="IngresarTexto" layoutX="28.0" layoutY="170.0" prefHeight="17.0" prefWidth="319.0" />
-      <TextField fx:id="Texto" layoutX="358.0" layoutY="166.0" visible="false" />
-      <Button layoutX="528.0" layoutY="315.0" mnemonicParsing="false" onAction="#Siguiente" text="Siguiente" />
-      <Button layoutX="537.0" layoutY="348.0" mnemonicParsing="false" onAction="#Salir" text="Volver" />
-      <Label fx:id="Informacion" layoutX="14.0" layoutY="360.0" prefHeight="52.0" prefWidth="519.0">
+      <Label alignment="CENTER" layoutX="18.0" layoutY="81.0" prefHeight="26.0" prefWidth="127.0" text="Seleccione una clase">
          <font>
             <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="ErrorClase" layoutX="458.0" layoutY="77.0" textFill="RED" />
-      <Label fx:id="ErrorOpcion" layoutX="458.0" layoutY="120.0" textFill="RED" />
-      <Label fx:id="ErrorText" layoutX="503.0" layoutY="162.0" prefHeight="17.0" prefWidth="0.0" textFill="#e10000" />
-      <Button fx:id="BotonVer" layoutX="544.0" layoutY="281.0" mnemonicParsing="false" onAction="#ActionVer" text="Ver" visible="false" />
-      <Button fx:id="BotonEliminar" layoutX="532.0" layoutY="282.0" mnemonicParsing="false" onAction="#ActionEliminar" text="Eliminar" visible="false" />
-      <Label fx:id="Atributo1" layoutX="27.0" layoutY="170.0" />
-      <Label fx:id="Atributo2" layoutX="27.0" layoutY="213.0" />
-      <Label fx:id="Atributo3" layoutX="27.0" layoutY="261.0" />
-      <TextField fx:id="Texto1" layoutX="97.0" layoutY="166.0" visible="false" />
-      <TextField fx:id="Texto3" layoutX="95.0" layoutY="257.0" visible="false" />
-      <TextField fx:id="Texto2" layoutX="95.0" layoutY="209.0" visible="false" />
-      <Label fx:id="Atributo4" layoutX="27.0" layoutY="306.0" />
-      <TextField fx:id="Texto4" layoutX="95.0" layoutY="303.0" visible="false" />
-      <Button fx:id="BotonCrear" layoutX="539.0" layoutY="282.0" mnemonicParsing="false" onAction="#ActionCrear" text="Crear" visible="false" />
-      <CheckBox fx:id="Si1" layoutX="443.0" layoutY="183.0" mnemonicParsing="false" onAction="#ActionSi" text="Si" visible="false" />
-      <CheckBox fx:id="No1" layoutX="514.0" layoutY="183.0" mnemonicParsing="false" onAction="#ActionNo" text="No" visible="false" />
-      <Label fx:id="Relacion1" layoutX="337.0" layoutY="183.0" />
-      <Label fx:id="LabelRelacion1" layoutX="317.0" layoutY="226.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="7.0" layoutY="124.0" prefHeight="26.0" prefWidth="149.0" text="Seleccione una opcion">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <CheckBox fx:id="Area" layoutX="169.0" layoutY="81.0" mnemonicParsing="false" onAction="#SeleccionarArea" prefHeight="26.0" prefWidth="58.0" text="Area">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="Empleado" layoutX="273.0" layoutY="81.0" mnemonicParsing="false" onAction="#SeleccionarEmpleado" prefHeight="26.0" prefWidth="86.0" text="Empleado">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="Cliente" layoutX="395.0" layoutY="81.0" mnemonicParsing="false" onAction="#SeleccionarCliente" prefHeight="26.0" prefWidth="74.0" text="Cliente">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <Label fx:id="ErrorClase" alignment="CENTER" layoutX="181.0" layoutY="107.0" prefHeight="18.0" prefWidth="254.0" textFill="RED" />
+      <CheckBox fx:id="Crear" layoutX="169.0" layoutY="124.0" mnemonicParsing="false" onAction="#SeleccionarCrear" prefHeight="26.0" prefWidth="58.0" text="Crear">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="Editar" layoutX="255.0" layoutY="124.0" mnemonicParsing="false" onAction="#SeleccionarEditar" prefHeight="26.0" prefWidth="58.0" text="Editar">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="Ver" layoutX="347.0" layoutY="124.0" mnemonicParsing="false" onAction="#SeleccionarVer" prefHeight="26.0" prefWidth="58.0" text="Ver">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="Eliminar" layoutX="420.0" layoutY="124.0" mnemonicParsing="false" onAction="#SeleccionarEliminar" prefHeight="26.0" prefWidth="74.0" text="Eliminar">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <Label fx:id="ErrorOpcion" layoutX="181.0" layoutY="153.0" prefHeight="18.0" prefWidth="254.0" textFill="RED" />
+      <Button layoutX="510.0" layoutY="92.0" mnemonicParsing="false" onAction="#Siguiente" prefHeight="26.0" prefWidth="86.0" text="Siguiente">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Label fx:id="IngresarTexto" layoutX="21.0" layoutY="160.0" opacity="0.81" prefHeight="46.0" prefWidth="230.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextField fx:id="Texto" layoutX="217.0" layoutY="166.0" prefHeight="30.0" prefWidth="178.0" visible="false" />
+      <Label fx:id="ErrorText" layoutX="217.0" layoutY="198.0" prefHeight="26.0" prefWidth="178.0" textFill="#e10000" />
+      <Button fx:id="BotonBuscar" layoutX="419.0" layoutY="169.0" mnemonicParsing="false" onAction="#ActionBuscar" prefHeight="30.0" prefWidth="86.0" text="Buscar" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="BotonVer" layoutX="419.0" layoutY="169.0" mnemonicParsing="false" onAction="#ActionVer" prefHeight="30.0" prefWidth="86.0" text="Ver" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="BotonEliminar" layoutX="419.0" layoutY="169.0" mnemonicParsing="false" onAction="#ActionEliminar" prefHeight="30.0" prefWidth="86.0" text="Eliminar" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Label fx:id="Atributo1" layoutX="27.0" layoutY="170.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="Atributo2" layoutX="27.0" layoutY="213.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="Atributo3" layoutX="27.0" layoutY="261.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="Atributo4" layoutX="27.0" layoutY="306.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <TextField fx:id="Texto1" layoutX="97.0" layoutY="166.0" prefHeight="26.0" prefWidth="149.0" visible="false" />
+      <TextField fx:id="Texto3" layoutX="95.0" layoutY="257.0" prefHeight="26.0" prefWidth="150.0" visible="false" />
+      <TextField fx:id="Texto2" layoutX="95.0" layoutY="209.0" prefHeight="26.0" prefWidth="149.0" visible="false" />
+      <TextField fx:id="Texto4" layoutX="95.0" layoutY="303.0" prefHeight="26.0" prefWidth="149.0" visible="false" />
+      <Button fx:id="BotonCrear" layoutX="329.0" layoutY="262.0" mnemonicParsing="false" onAction="#ActionCrear" prefHeight="30.0" prefWidth="94.0" text="Crear" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="BotonEditar" layoutX="419.0" layoutY="169.0" mnemonicParsing="false" onAction="#ActionEditar" prefHeight="30.0" prefWidth="86.0" text="Editar" visible="false" />
+      <CheckBox fx:id="Si1" layoutX="443.0" layoutY="183.0" mnemonicParsing="false" onAction="#ActionSi" text="Si" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="No1" layoutX="514.0" layoutY="183.0" mnemonicParsing="false" onAction="#ActionNo" text="No" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <Label fx:id="Relacion1" layoutX="337.0" layoutY="183.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="LabelRelacion1" layoutX="317.0" layoutY="226.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
       <TextField fx:id="RelacionTexto1" layoutX="423.0" layoutY="222.0" visible="false" />
-      <Label fx:id="ErrorCrear" layoutX="226.0" layoutY="342.0" prefHeight="17.0" prefWidth="230.0" textFill="RED" />
-      <Label fx:id="ErrorVer" layoutX="213.0" layoutY="351.0" prefHeight="17.0" prefWidth="253.0" textFill="RED" />
-      <Button fx:id="BotonEditar" layoutX="535.0" layoutY="281.0" mnemonicParsing="false" onAction="#ActionEditar" text="Editar" visible="false" />
-      <CheckBox fx:id="Atributos" layoutX="97.0" layoutY="201.0" mnemonicParsing="false" onAction="#ActionAtributos" text="Atributos" visible="false" />
-      <CheckBox fx:id="Relaciones" layoutX="364.0" layoutY="201.0" mnemonicParsing="false" onAction="#ActionRelaciones" text="Relaciones" visible="false" />
-      <Label fx:id="Atributoeditar1" layoutX="4.0" layoutY="226.0" prefHeight="17.0" prefWidth="74.0" />
-      <Label fx:id="Atributoeditar2" layoutX="4.0" layoutY="258.0" prefHeight="17.0" prefWidth="74.0" />
-      <Label fx:id="Atributoeditar3" layoutX="8.0" layoutY="295.0" prefHeight="17.0" prefWidth="73.0" />
-      <Label fx:id="Atributoeditar4" layoutX="8.0" layoutY="334.0" prefHeight="17.0" prefWidth="73.0" />
-      <TextField fx:id="TextoEditar1" layoutX="93.0" layoutY="222.0" visible="false" />
-      <TextField fx:id="TextoEditar2" layoutX="93.0" layoutY="254.0" visible="false" />
-      <TextField fx:id="TextoEditar3" layoutX="93.0" layoutY="291.0" visible="false" />
-      <TextField fx:id="TextoEditar4" layoutX="93.0" layoutY="330.0" visible="false" />
-      <CheckBox fx:id="BoxRelacion1" layoutX="328.0" layoutY="235.0" mnemonicParsing="false" onAction="#ActionRelacion1" text="CheckBox" visible="false" />
-      <CheckBox fx:id="BoxRelacion2" layoutX="328.0" layoutY="300.0" mnemonicParsing="false" onAction="#ActionRelacion2" text="CheckBox" visible="false" />
+      <Label fx:id="ErrorCrear" layoutX="29.0" layoutY="337.0" prefHeight="26.0" prefWidth="438.0" textFill="RED" />
+      <Label fx:id="ErrorVer" alignment="CENTER" layoutX="29.0" layoutY="337.0" prefHeight="26.0" prefWidth="438.0" textFill="RED" />
+      <CheckBox fx:id="Atributos" layoutX="97.0" layoutY="213.0" mnemonicParsing="false" onAction="#ActionAtributos" prefHeight="26.0" prefWidth="79.0" text="Atributos" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <CheckBox fx:id="Relaciones" layoutX="374.0" layoutY="207.0" mnemonicParsing="false" onAction="#ActionRelaciones" prefHeight="26.0" prefWidth="127.0" text="Relaciones" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <Label fx:id="Atributoeditar1" alignment="CENTER" contentDisplay="CENTER" layoutX="4.0" layoutY="255.0" prefHeight="17.0" prefWidth="74.0" />
+      <Label fx:id="Atributoeditar2" alignment="CENTER" layoutX="3.0" layoutY="300.0" prefHeight="17.0" prefWidth="74.0" />
+      <Label fx:id="Atributoeditar3" alignment="CENTER" layoutX="4.0" layoutY="340.0" prefHeight="17.0" prefWidth="73.0" />
+      <Label fx:id="Atributoeditar4" alignment="CENTER" layoutX="4.0" layoutY="375.0" prefHeight="17.0" prefWidth="73.0" />
+      <TextField fx:id="TextoEditar1" layoutX="93.0" layoutY="251.0" prefHeight="26.0" prefWidth="150.0" visible="false" />
+      <TextField fx:id="TextoEditar2" layoutX="93.0" layoutY="290.0" prefHeight="30.0" prefWidth="150.0" visible="false" />
+      <TextField fx:id="TextoEditar3" layoutX="93.0" layoutY="331.0" prefHeight="26.0" prefWidth="150.0" visible="false" />
+      <TextField fx:id="TextoEditar4" layoutX="93.0" layoutY="371.0" prefHeight="26.0" prefWidth="150.0" visible="false" />
+      <CheckBox fx:id="BoxRelacion1" layoutX="290.0" layoutY="235.0" mnemonicParsing="false" onAction="#ActionRelacion1" prefHeight="18.0" prefWidth="112.0" text="CheckBox" visible="false" />
+      <CheckBox fx:id="BoxRelacion2" layoutX="290.0" layoutY="300.0" mnemonicParsing="false" onAction="#ActionRelacion2" prefHeight="18.0" prefWidth="112.0" text="CheckBox" visible="false" />
       <Label fx:id="RelacionEditar1" layoutX="277.0" layoutY="270.0" />
       <TextField fx:id="TextoRelacionEditar1" layoutX="336.0" layoutY="263.0" visible="false" />
       <TextField fx:id="TextoRelacionEditar2" layoutX="336.0" layoutY="322.0" visible="false" />
       <Label fx:id="RelacionEditar2" layoutX="277.0" layoutY="331.0" />
       <Label fx:id="ErrorEditar" layoutX="183.0" layoutY="367.0" prefHeight="17.0" prefWidth="185.0" textFill="RED" />
-      <Button fx:id="BotonBuscar" layoutX="533.0" layoutY="283.0" mnemonicParsing="false" onAction="#ActionBuscar" text="Buscar" visible="false" />
       <CheckBox fx:id="BoxRelacion11" layoutX="420.0" layoutY="235.0" mnemonicParsing="false" onAction="#ActionRelacion11" text="CheckBox" visible="false" />
       <CheckBox fx:id="BoxRelacion22" layoutX="420.0" layoutY="298.0" mnemonicParsing="false" onAction="#ActionRelacion22" text="CheckBox" visible="false" />
       <Label fx:id="ErrorEliminar" layoutX="264.0" layoutY="306.0" textFill="RED" />
+      <Label alignment="CENTER" cache="true" cacheHint="SCALE" layoutX="159.0" layoutY="14.0" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" opacity="0.73" prefHeight="26.0" prefWidth="298.0" text="Universidad Nacional de Colombia " textAlignment="CENTER" textFill="#2aaa53" textOverrun="LEADING_ELLIPSIS">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="Informacion" layoutX="4.0" layoutY="359.0" prefHeight="52.0" prefWidth="519.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="Saludo" alignment="CENTER" layoutX="1.0" layoutY="27.0" prefHeight="57.0" prefWidth="600.0" text="Administración" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Button layoutX="516.0" layoutY="384.0" mnemonicParsing="false" onAction="#Salir" prefHeight="26.0" prefWidth="85.0" text="Volver" />
    </children>
 </AnchorPane>
