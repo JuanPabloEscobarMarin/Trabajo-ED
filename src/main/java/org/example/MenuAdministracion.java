@@ -671,6 +671,9 @@ public class MenuAdministracion {
     }
     @FXML
     private void ActionBuscar(ActionEvent actionEvent)throws IOException{
+        ErrorText.setText("");
+        ErrorEditar.setText("");
+        Informacion.setText("");
         if(Area.isSelected()&&Editar.isSelected()){
             String area=Texto.getText().toLowerCase();
             if(!App.areas.containsKey(area)){
@@ -925,6 +928,7 @@ public class MenuAdministracion {
     private void ActionVer(ActionEvent actionEvent)throws IOException {
         Informacion.setText("");
         ErrorVer.setText("");
+        ErrorText.setText("");
 
         if(Texto.getText().equals("")){
             ErrorText.setText("Ingrese un valor");
@@ -969,6 +973,9 @@ public class MenuAdministracion {
 
     @FXML
     private void ActionEliminar(ActionEvent actionEvent)throws IOException{
+        ErrorText.setText("");
+        ErrorEliminar.setText("");
+        Informacion.setText("");
         if(Texto.getText().equals("")){
             ErrorText.setText("Ingrese un valor");
         }
@@ -1053,6 +1060,7 @@ public class MenuAdministracion {
     @FXML
     private void ActionCrear(ActionEvent actionEvent)throws IOException{
         ErrorCrear.setText("");
+        Informacion.setText("");
         if(Texto1.getText().equals("")||Texto2.getText().equals("")||Texto3.getText().equals("")||Texto4.getText().equals("")){
             ErrorCrear.setText("Falta atributo(s)");
         }
@@ -1323,6 +1331,8 @@ public class MenuAdministracion {
     @FXML
     private void ActionEditar(ActionEvent editar)throws IOException{
         ErrorEditar.setText("");
+        ErrorText.setText("");
+        Informacion.setText("");
         if(Area.isSelected()){
             String nombre=Texto.getText();
             if(!App.areas.containsKey(nombre)){
