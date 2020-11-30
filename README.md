@@ -12,3 +12,7 @@ tanto la multinacional como las sedes poseen inversores.
 usuario : 123456789
 clave: 1234
 correo : example.com
+
+
+diagrama de clases actualizado :
+https://drive.google.com/file/d/18BgL7yVGt04KxOw4FJa7uG_PN4P6mMXY/view?usp=sharing
